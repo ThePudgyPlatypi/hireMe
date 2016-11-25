@@ -1,0 +1,9 @@
+<div class="row">
+  <h2 class="subheader">Create New User</h2>
+  <%= form_for(@user) do |user| %>
+
+    <%= render(:partial => 'form', :locals => {:user => user}) %>
+
+    <%= user.submit("Create User", :class => "success button") %>
+  <% end %>
+</div>

@@ -1,0 +1,128 @@
+<div class="row">
+  <h2 class="subheader">Employer <%= @employer.company_name %> Parameters</h2>
+  <table summary="Employer table" class="hover stack">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Attribute</th>
+      <tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Company Name</td>
+        <td><%= @employer.company_name %></td>
+      </tr>
+      <tr>
+        <td>Industry</td>
+        <td><%= @employer.industry %></td>
+      </tr>
+      <tr>
+        <td>Date Founded</td>
+        <td><%= @employer.founded %></td>
+      </tr>
+      <tr>
+        <td>Company Size</td>
+        <td><%= @employer.size %></td>
+      </tr>
+      <tr>
+        <td>About <%= @employer.company_name %></td>
+        <td><%= @employer.about %></td>
+      </tr>
+      <tr>
+        <td>Contact Phone Number</td>
+        <td><%= @employer.contact_phone %></td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td><%= @employer.contact_email %></td>
+      </tr>
+      <tr>
+        <td>Website</td>
+        <td><%= @employer.website %></td>
+      </tr>
+      <tr>
+        <td>HQ address</td>
+        <td>
+          <address>
+            <p>
+              <%= @employer.hq_address %>, <%= @number %><br />
+              <%= @employer.hq_city %>, <%= @employer.hq_state %><br />
+            </p>
+          </address>
+        </td>
+      </tr>
+      <tr>
+        <td>Local address</td>
+        <td>
+          <address>
+            <p>
+              <%= @employer.local_address %>, <%= @local_number %><br />
+              <%= @employer.local_city %>, <%= @employer.local_state %><br />
+            </p>
+          </address>
+        </td>
+      </tr>
+      <tr>
+        <td>Facebook</td>
+        <td>
+          <a href="http://<%= @employer.facebook %>">
+            <%= @employer.facebook %>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>Twitter</td>
+        <td>
+          <a href="http://<%= @employer.twitter %>">
+            <%= @employer.twitter %>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>Google+</td>
+        <td>
+          <a href="http://<%= @employer.google %>">
+            <%= @employer.google %>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>YouTube</td>
+        <td>
+          <a href="http://<%= @employer.youtube %>">
+            <%= @employer.youtube %>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>LinkedIn</td>
+        <td>
+          <a href="http://<%= @employer.linkedin %>">
+            <%= @employer.linkedin %>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>Instagram</td>
+        <td>
+          <a href="http://<%= @employer.instagram %>">
+            <%= @employer.instagram %>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>Profile Created</td>
+        <td>
+          <%= @employer.created_at %>
+        </td>
+      </tr>
+      <tr>
+        <td>Last Update</td>
+        <td>
+            <%= @employer.updated_at %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <%= button_to("Create Job Listing", new_employer_job_path, :method => 'get', :class => 'button') %>
+</div>

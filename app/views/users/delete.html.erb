@@ -1,0 +1,7 @@
+<div class="row">
+  <h2 class="subheader">Delete User</h2>
+  <%= form_for(@user, :method => 'delete') do |user| %>
+    <p>Are you sure you want to delete <%= user.object.username %>'s profile?</p>
+    <%= user.submit("Delete User", :class => "alert button") %>
+  <% end %>
+</div>

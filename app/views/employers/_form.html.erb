@@ -1,0 +1,196 @@
+<!-- Company name and industry  -->
+<h3 class="subheader">General information</h3>
+<div class="row">
+  <div class="small-4 columns">
+    <label>Company Name
+      <%= employer.text_field(:company_name) %>
+    </label>
+  </div>
+  <div class="small-4 columns end">
+    <label>Industry
+      <%= employer.text_field(:industry) %>
+    </label>
+  </div>
+</div>
+<!-- Founded date and size  -->
+<div class="row">
+  <div class="small-4 columns">
+    <label>Founded
+      <%= employer.date_field(:founded) %>
+    </label>
+  </div>
+  <div class="small-4 columns end">
+    <label>Size
+      <%= employer.text_field(:size) %>
+    </label>
+  </div>
+</div>
+<!-- about text box  -->
+<div class="row">
+  <div class="small-8 columns end">
+    <label>About Us
+      <%= employer.text_area(:about, :placeholder => "limit 2500 characters", :rows => 8) %>
+    </label>
+  </div>
+</div>
+
+<!-- HQ Address  -->
+<h3 class="subheader">Headquarters Info</h3>
+<div class="row">
+  <div class="small-5 columns">
+    <label>Address
+      <%= employer.text_field(:hq_address) %>
+    </label>
+  </div>
+  <div class="small-1 columns">
+    <label>Apt.
+      <%= employer.text_field(:hq_apartment) %>
+    </label>
+  </div>
+  <div class="small-1 columns">
+    <label>Building #
+      <%= employer.text_field(:hq_building) %>
+    </label>
+  </div>
+  <div class="small-1 columns end">
+    <label>Suite
+      <%= employer.text_field(:hq_suite) %>
+    </label>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-3 columns">
+    <label>City
+      <%= employer.text_field(:hq_city) %>
+    </label>
+  </div>
+  <div class="small-2 columns">
+    <label>State
+      <%= employer.text_field(:hq_state) %>
+    </label>
+  </div>
+  <div class="small-3 columns end">
+    <label>Country
+      <%= employer.text_field(:hq_country) %>
+    </label>
+  </div>
+</div>
+
+<!-- <div class="small-4 columns end">
+  <p>Headquarter address the same as Local address?</p>
+  <div class="switch">
+      <label class="switch-paddle" for="admin">
+        <span class="show-for-sr">Do you like me?</span>
+        <span class="switch-active" aria-hidden="true">Yes</span>
+        <span class="switch-inactive" aria-hidden="true">No</span>
+      </label>
+    </div>
+</div> -->
+
+<!-- Local Address  -->
+<h3 class="subheader">Local Base Info</h3>
+<div class="row">
+  <div class="small-5 columns">
+    <label>Address
+      <%= employer.text_field(:local_address) %>
+    </label>
+  </div>
+  <div class="small-1 columns">
+    <label>Apt.
+      <%= employer.text_field(:local_apartment) %>
+    </label>
+  </div>
+  <div class="small-1 columns">
+    <label>Building #
+      <%= employer.text_field(:local_building) %>
+    </label>
+  </div>
+  <div class="small-1 columns end">
+    <label>Suite
+      <%= employer.text_field(:local_suite) %>
+    </label>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-3 columns">
+    <label>City
+      <%= employer.text_field(:local_city) %>
+    </label>
+  </div>
+  <div class="small-2 columns">
+    <label>State
+      <%= employer.text_field(:local_state) %>
+    </label>
+  </div>
+  <div class="small-3 columns end">
+    <label>Country
+      <%= employer.text_field(:local_country) %>
+    </label>
+  </div>
+</div>
+
+<h3 class="subheader">Contact Information</h3>
+<!-- Contact information -->
+<div class="row">
+  <div class="small-4 columns">
+    <label>Contact Email
+      <%= employer.text_field(:contact_email) %>
+    </label>
+  </div>
+  <div class="small-4 columns end">
+    <label>Contact Phone
+      <%= employer.text_field(:contact_phone) %>
+    </label>
+  </div>
+</div>
+<!-- website -->
+<div class="row">
+  <div class="small-6 columns end">
+    <label>Website
+      <%= employer.text_field(:website) %>
+    </label>
+  </div>
+</div>
+
+<!-- social menda  -->
+<h3 class="subheader">Social Media</h3>
+<div class="row">
+  <div class="small-4 columns">
+    <label>Facebook
+      <%= employer.text_field(:facebook) %>
+    </label>
+  </div>
+  <div class="small-4 columns end">
+    <label>Twitter
+      <%= employer.text_field(:twitter) %>
+    </label>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-4 columns">
+    <label>Google+
+      <%= employer.text_field(:google) %>
+    </label>
+  </div>
+  <div class="small-4 columns end">
+    <label>YouTube
+      <%= employer.text_field(:youtube) %>
+    </label>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-4 columns end">
+    <label>LinkedIN
+      <%= employer.text_field(:linkedin) %>
+    </label>
+  </div>
+  <div class="small-4 columns end">
+    <label>Instagram
+      <%= employer.text_field(:instagram) %>
+    </label>
+  </div>
+</div>

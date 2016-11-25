@@ -1,0 +1,23 @@
+<div class="row">
+  <h2 class="subheader">Employer List</h2>
+  <% @employers.each do |employer| %>
+    <table summary="Employer list table" class="hover">
+      <thead>
+        <tr>
+          <th width="200">Company Name</th>
+          <th colspan="3" class="textCenter">Actions</th>
+        <tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= employer.company_name %></td>
+          <td class="textCenter"><%= button_to("Show User", employer_path(employer), :method => "get", :class => "button") %></td>
+          <td class="textCenter"><%= button_to('Edit User', edit_employer_path(employer), :method => 'get', :class => 'button') %></td>
+          <td class="textCenter"><%= button_to('Delete User', delete_employer_path(employer), :method => 'get', :class => 'alert button') %></td>
+        </tr>
+      </tbody>
+    </table>
+  <% end %>
+  <br />
+  <%= button_to("Create User", new_employer_path, :method => "get", :class => "button") %>
+</div>

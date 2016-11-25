@@ -1,0 +1,9 @@
+<div class="row">
+  <h2 class="subheader">Edit Employer</h2>
+  <%= form_for(@employer) do |employer| %>
+
+    <%= render(:partial => 'form', :locals => {:employer => employer}) %>
+
+    <%= employer.submit("Update Employer", :class => "success button") %>
+  <% end %>
+</div>

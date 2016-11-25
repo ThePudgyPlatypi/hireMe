@@ -1,0 +1,69 @@
+<div class="row">
+  <h2 class="subheader">User <%= @user.username %> Parameters</h2>
+  <table summary="User table" class="hover stack">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Attribute</th>
+      <tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>First Name</td>
+        <td><%= @user.first_name %></td>
+      </tr>
+      <tr>
+        <td>Last Name</td>
+        <td><%= @user.last_name %></td>
+      </tr>
+      <tr>
+        <td>Admin?</td>
+        <td><%= @user.admin ? 'Yes' : 'No' %></td>
+      </tr>
+      <tr>
+        <td>Username</td>
+        <td><%= @user.username %></td>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td><%= @user.password %></td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td><%= @user.email %></td>
+      </tr>
+      <tr>
+        <td>About</td>
+        <td><%= @user.about %></td>
+      </tr>
+      <tr>
+        <td>Story</td>
+        <td><%= @user.story %></td>
+      </tr>
+      <tr>
+        <td>School</td>
+        <td><%= @user.school %></td>
+      </tr>
+      <tr>
+        <td>Major</td>
+        <td><%= @user.major %></td>
+      </tr>
+      <tr>
+        <td>Current Term</td>
+        <td><%= @user.current_term %></td>
+      </tr>
+      <tr>
+        <td>Graduation Date</td>
+        <td><%= @user.graduation_date %></td>
+      </tr>
+      <tr>
+        <td>Profile Created</td>
+        <td><%= @user.created_at %></td>
+      </tr>
+      <tr>
+        <td>Last Update</td>
+        <td><%= @user.updated_at %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
