@@ -1,0 +1,9 @@
+<div class="row">
+  <h2 class="subheader">Create New Job for <%= @employer.company_name %></h2>
+  <%= form_for [@employer, @job] do |job| %>
+
+    <%= render(:partial => 'form', :locals => {:job => job}) %>
+
+    <%= job.submit("Create Job", :class => "success button") %>
+  <% end %>
+</div>

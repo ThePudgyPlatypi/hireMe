@@ -7,7 +7,7 @@ class EmployersController < ApplicationController
 
   def show
     @employer = Employer.find(params[:id])
-
+    @jobs = @employer.jobs.all.order(created_at: :desc)
     # There has to be a better way to state the code below
     if @employer.hq_building?
       @building = "Bldg #{@employer.hq_building}"

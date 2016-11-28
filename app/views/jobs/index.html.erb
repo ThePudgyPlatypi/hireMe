@@ -1,0 +1,31 @@
+<div class="row">
+    <h3 class="subheader">Active Job Listings</h3>
+    <% @jobs.each do |job| %>
+      <div class="row jobs">
+        <div class="column small-8">
+          <label>Job Position
+            <p><%= job.position %></p>
+          </label>
+        </div>
+
+        <div class="column small-4">
+          <label>Salary
+            <p><%= job.salary %></p>
+          </label>
+        </div>
+
+        <div class="column small-12">
+          <label>Description
+            <p><%= job.description %></p>
+          </label>
+        </div>
+
+        <div class="column small-12">
+          <label>Hours
+            <p><%= job.hours %></p>
+          </label>
+        </div>
+      </div>
+
+    <% end %>
+</div>

@@ -1,11 +1,6 @@
 Rails.application.routes.draw do
-  resources :applications do
-    member do
-      get :delete
-    end
-  end
 
-  resources :jobs do
+  resources :apps do
     member do
       get :delete
     end
@@ -15,7 +10,20 @@ Rails.application.routes.draw do
     member do
       get :delete
     end
-    resources :jobs, only: [:index, :new, :create]
+
+    # Nested jobs so that employers can create new postings! check rails routes
+    resources :jobs do
+      member do
+        get :delete
+      end
+    end
+
+  end
+
+  resources :jobs do
+    member do
+      get :delete
+    end
   end
 
   resources :users do

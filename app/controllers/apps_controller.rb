@@ -1,4 +1,6 @@
-class ApplyController < ApplicationController
+class AppsController < ApplicationController
+  layout 'adminPanel'
+
   def index
   end
 
@@ -14,9 +16,6 @@ class ApplyController < ApplicationController
   def edit
   end
 
-  def update
-  end
-
   def delete
   end
 
@@ -25,6 +24,7 @@ class ApplyController < ApplicationController
 
   private
 
-  def apply_params
+  def apps_params
+    params.require(:apps).params.permit()
   end
 end
