@@ -1,2 +1,9 @@
-<h1>Jobs#edit</h1>
-<p>Find me in app/views/jobs/edit.html.erb</p>
+<div class="row">
+  <h2 class="subheader">Edit Job <%= @job.position %></h2>
+  <%= form_for [@employer, @job] do |job| %>
+
+    <%= render(:partial => 'form', :locals => {:job => job}) %>
+
+    <%= job.submit("Edit Job", :class => "success button") %>
+  <% end %>
+</div>

@@ -1,0 +1,11 @@
+<div class="row">
+  <h2 class="subheader"><%= @job.position %> at <%= @job.employer.company_name %></h2>
+  <div class="row jobs">
+    <%= render(:partial => 'view', :locals => {:job => @job}) %>
+    <div class="column small-12">
+      <ul class="menu">
+        <li><%= button_to("Apply", new_job_app_path(@job), :method => 'get', :class => 'button') %></li>
+      </ul>
+    </div>
+  </div>
+</div>

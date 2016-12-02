@@ -11,13 +11,13 @@
       <tbody>
         <tr>
           <td><%= employer.company_name %></td>
-          <td class="textCenter"><%= button_to("Show User", employer_path(employer), :method => "get", :class => "button") %></td>
-          <td class="textCenter"><%= button_to('Edit User', edit_employer_path(employer), :method => 'get', :class => 'button') %></td>
-          <td class="textCenter"><%= button_to('Delete User', delete_employer_path(employer), :method => 'get', :class => 'alert button') %></td>
+          <td class="textCenter"><%= button_to("Show Employer", employer_path(employer), :method => "get", :class => "button") %></td>
+          <td class="textCenter"><%= button_to('Edit Employer', edit_employer_path(employer), :method => 'get', :class => 'button') %></td>
+          <td class="textCenter"><%= button_to('Delete Employer', delete_employer_path(employer), :method => 'get', :class => 'alert button') %></td>
         </tr>
       </tbody>
     </table>
   <% end %>
   <br />
-  <%= button_to("Create User", new_employer_path, :method => "get", :class => "button") %>
+  <%= button_to("Create Employer", new_employer_path, :method => "get", :class => "button") %>
 </div>

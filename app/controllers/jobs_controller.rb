@@ -6,6 +6,7 @@ class JobsController < ApplicationController
   end
 
   def show
+    @job = Job.find(params[:id])
   end
 
   def new
@@ -15,7 +16,7 @@ class JobsController < ApplicationController
 
   def create
     @employer = Employer.find(params[:employer_id])
-    @job = @employer.jobs.new(job_params)
+    @job = Job.new(job_params)
     if @job.save
       redirect_to(employer_path(@employer))
     else
@@ -24,12 +25,29 @@ class JobsController < ApplicationController
   end
 
   def edit
+    @employer = Employer.find(params[:employer_id])
+    @job = Job.find(params[:id])
+  end
+
+  def update
+    @employer = Employer.find(params[:employer_id])
+    @job = Job.find(params[:id])
+    if @job.update_attributes(job_params)
+      redirect_to(employer_path(@employer))
+    else
+      render 'edit'
+    end
   end
 
   def delete
+    @employer = Employer.find(params[:employer_id])
+    @job = Job.find(params[:id])
   end
 
   def destroy
+    @job = Job.find(params[:id])
+    @job.destroy
+    redirect_to(employer_path(@job.employer_id))
   end
 
   private
@@ -42,6 +60,5 @@ class JobsController < ApplicationController
     :description,
     :hours
   )
-
   end
 end

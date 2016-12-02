@@ -1,11 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :apps do
-    member do
-      get :delete
-    end
-  end
-
   resources :employers do
     member do
       get :delete
@@ -17,19 +11,19 @@ Rails.application.routes.draw do
         get :delete
       end
     end
-
   end
 
-  resources :jobs do
-    member do
-      get :delete
-    end
+  # Nesting apps paths for index, new, create
+  resources :jobs, only: [:index, :show] do
+    resources :user_applications, only: [:new, :create]
   end
 
   resources :users do
     member do
       get :delete
     end
+
+    resources :user_applications, only: [:index, :show]
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

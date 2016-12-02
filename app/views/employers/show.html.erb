@@ -132,35 +132,42 @@
       <h3 class="subheader">Active Job Listings</h3>
       <% @jobs.each do |job| %>
         <div class="row job">
-          <hr />
           <div class="column small-8">
-            <label>Job Position
+            <label class="bold">Job Position</label>
               <p><%= job.position %></p>
-            </label>
+
           </div>
 
           <div class="column small-4">
-            <label>Salary
+            <label class="bold">Salary</label>
               <p><%= job.salary %></p>
-            </label>
+
           </div>
 
           <div class="column small-12">
-            <label>Description
+            <label class="bold">Description</label>
               <p><%= job.description %></p>
-            </label>
+
           </div>
 
           <div class="column small-12">
-            <label>Hours
+            <label class="bold">Hours</label>
               <p><%= job.hours %></p>
-            </label>
           </div>
-          <hr />
+          <div class="column small-12">
+            <ul class="menu">
+              <li><%= button_to("Edit", edit_employer_job_path(@employer, job.id), :method => 'get', :class => 'button') %></li>
+              <li><%= button_to("View", employer_job_path(@employer, job.id), :method => 'get', :class => 'button') %></li>
+              <li><%= button_to("Delete", delete_employer_job_path(@employer, job.id), :method => 'get', :class => 'button') %></li>
+            </ul>
+          </div>
         </div>
-
       <% end %>
+      <div class="column small-centered small-6">
+        <p class="text-center">
+          <%= button_to("Create Job Listing", new_employer_job_path(@employer), :method => 'get', :class => 'button') %>
+        </p>
+      </div>
     </div>
-    <%= button_to("Create Job Listing", new_employer_job_path(@employer), :method => 'get', :class => 'button') %>
   </div>
 </div>

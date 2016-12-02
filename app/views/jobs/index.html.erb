@@ -1,31 +1,14 @@
 <div class="row">
     <h3 class="subheader">Active Job Listings</h3>
     <% @jobs.each do |job| %>
-      <div class="row jobs">
-        <div class="column small-8">
-          <label>Job Position
-            <p><%= job.position %></p>
-          </label>
-        </div>
-
-        <div class="column small-4">
-          <label>Salary
-            <p><%= job.salary %></p>
-          </label>
-        </div>
-
-        <div class="column small-12">
-          <label>Description
-            <p><%= job.description %></p>
-          </label>
-        </div>
-
-        <div class="column small-12">
-          <label>Hours
-            <p><%= job.hours %></p>
-          </label>
-        </div>
+    <div class="row jobs">
+      <%= render(:partial => 'view', :locals => {:job => job}) %>
+      <div class="column small-12">
+        <ul class="menu">
+          <li><%= button_to("Apply", new_job_user_application_path(job), :method => 'get', :class => 'button') %></li>
+          <li><%= button_to("View", job_path(job), :method => 'get', :class => 'button') %></li>
+        </ul>
       </div>
-
+    </div>
     <% end %>
 </div>

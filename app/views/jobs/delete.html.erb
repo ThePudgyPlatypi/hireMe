@@ -1,2 +1,7 @@
-<h1>Jobs#delete</h1>
-<p>Find me in app/views/jobs/delete.html.erb</p>
+<div class="row">
+  <h2 class="subheader">Delete Job</h2>
+  <%= form_for(@job, :method => 'delete') do |job| %>
+    <p>Are you sure you want to delete the <%= job.object.position %> job listing?</p>
+    <%= job.submit("Delete User", :class => "alert button") %>
+  <% end %>
+</div>
