@@ -4,7 +4,7 @@
     <%= render(:partial => 'view', :locals => {:job => @job}) %>
     <div class="column small-12">
       <ul class="menu">
-        <li><%= button_to("Apply", new_job_app_path(@job), :method => 'get', :class => 'button') %></li>
+        <li><%= button_to("Apply", new_job_user_application_path(@job), :method => 'get', :class => 'button') %></li>
       </ul>
     </div>
   </div>
