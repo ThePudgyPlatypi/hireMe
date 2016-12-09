@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   layout 'adminPanel'
 
+  before_action :confirm_logged_in
+  
   def index
     @users = User.all.order(:username)
   end

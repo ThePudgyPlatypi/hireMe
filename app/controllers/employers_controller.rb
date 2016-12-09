@@ -1,6 +1,6 @@
 class EmployersController < ApplicationController
   layout 'adminPanel'
-
+  before_action :confirm_logged_in
   def index
     @employers = Employer.all.order(:company_name)
   end

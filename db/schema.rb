@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161202005934) do
+ActiveRecord::Schema.define(version: 20161209040024) do
 
   create_table "applications", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "user_id"
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20161202005934) do
     t.string   "snapchat"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "password_digest"
   end
 
   create_table "jobs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
@@ -85,7 +86,6 @@ ActiveRecord::Schema.define(version: 20161202005934) do
     t.string   "first_name",      limit: 50
     t.string   "last_name",       limit: 50
     t.string   "username",        limit: 20
-    t.string   "password"
     t.string   "email"
     t.text     "about",           limit: 65535
     t.text     "story",           limit: 65535
@@ -96,6 +96,7 @@ ActiveRecord::Schema.define(version: 20161202005934) do
     t.datetime "created_at",                                    null: false
     t.datetime "updated_at",                                    null: false
     t.boolean  "admin",                         default: false
+    t.string   "password_digest"
   end
 
 end

@@ -1,5 +1,6 @@
 <div class="row">
   <%= app.hidden_field(:job_id, :value => params[:job_id]) %>
+  <%= app.hidden_field(:user_id, :value => session[:user_id]) %>
   <div class="small-4 columns">
     <label class="bold">Name</label>
       <%= app.text_field(:name) %>
@@ -10,9 +11,5 @@
       <%= app.text_area(:resume) %>
   </div>
 
-  <div class="small-4 columns">
-    <label class="bold">Who are you?</label>
-    <!-- List out the users for now, will get set up when user login and such is added -->
-      <%= app.text_area(:user_id) %>
-  </div>
+
 </div>
