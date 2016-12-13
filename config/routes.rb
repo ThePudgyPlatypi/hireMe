@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
-  get 'admin', :to => 'access#menu'
-  get 'access/menu'
+  root "access#index"
+
+  # Route for the choice between user or employer
+  get "access/signup_choice"
+
+  
   get 'access/login'
   post 'access/attempt_login'
   get 'access/logout'

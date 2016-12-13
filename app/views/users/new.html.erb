@@ -1,9 +1,11 @@
 <div class="row">
-  <h2 class="subheader">Create New User</h2>
+  <h2 class="subheader text-center mainheader">Create New User</h2>
   <%= form_for(@user) do |user| %>
 
     <%= render(:partial => 'form', :locals => {:user => user}) %>
 
-    <%= user.submit("Create User", :class => "success button") %>
+    <div class="columns small-offset-2 small-8 end">
+      <%= user.submit("Create Account", :class => "button") %>
+    </div>
   <% end %>
 </div>

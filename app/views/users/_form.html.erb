@@ -1,6 +1,6 @@
 <!-- First and last name  -->
 <div class="row">
-  <div class="small-4 columns">
+  <div class="small-4 small-offset-2 columns">
     <label>First Name
       <%= user.text_field(:first_name, :placeholder => "Limit 50 Characters") %>
     </label>
@@ -13,7 +13,7 @@
 </div>
 <!-- username and password  -->
 <div class="row">
-  <div class="small-4 columns">
+  <div class="small-4 small-offset-2 columns">
     <label>User Name
       <%= user.text_field(:username, :placeholder => "Limit 50 Characters") %>
     </label>
@@ -26,7 +26,7 @@
 </div>
 <!-- Email field and admin -->
 <div class="row">
-  <div class="small-4 columns">
+  <div class="small-4 small-offset-2 columns">
     <label>Email
       <%= user.text_field(:email) %>
     </label>
@@ -45,7 +45,7 @@
 </div>
 <!-- About field  -->
 <div class="row">
-  <div class="small-8 columns end">
+  <div class="small-8 small-offset-2 columns end">
     <label>About Me
       <%= user.text_area(:about, :placeholder => "limit 2500 characters", :rows => 8) %>
     </label>
@@ -53,7 +53,7 @@
 </div>
 <!-- Story field  -->
 <div class="row">
-  <div class="small-8 columns end">
+  <div class="small-8 small-offset-2 columns end">
     <label>My Story
       <%= user.text_area(:story, :placeholder => "limit 2500 characters", :rows => 8) %>
     </label>
@@ -61,7 +61,7 @@
 </div>
 <!-- School name -->
 <div class="row">
-  <div class="small-4 columns end">
+  <div class="small-4 small-offset-2 columns end">
     <label>School
       <%= user.text_field(:school) %>
     </label>
@@ -69,17 +69,19 @@
 </div>
 <!-- Major, term, and grad date -->
 <div class="row">
-  <div class="small-4 columns">
+  <div class="small-4 small-offset-2 columns">
     <label>Major
       <%= user.text_field(:major) %>
     </label>
   </div>
-  <div class="small-2 columns">
+  <div class="small-4 columns end">
     <label>Current Term
       <%= user.text_field(:current_term) %>
     </label>
   </div>
-  <div class="small-2 columns end">
+</div>
+<div class="row">
+  <div class="small-4 small-offset-2 columns end">
     <label>Expected Graduation Date
       <%= user.date_field(:graduation_date) %>
     </label>

@@ -16,28 +16,137 @@
 
  */
 
- .bold {
-   font-weight: bold;
+
+/*GENERAL STYLES*/
+/*@font-face {
+    font-family: 'OpenSans-Regular';
+    src: url('./fonts/orangejuice.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}*/
+
+body, html {
+  background-color: #ff8300;
+  font-family: 'OpenSans-Regular', sans-serif;;
+}
+
+#container {
+  min-height: calc(100vh - 170px);
+  margin-bottom: 20px;
+}
+
+.top-bar {
+  box-shadow: 0px 10px 15px rgba(130, 54, 0, 0.3);
+}
+
+.footer {
+  background-color: rgb(229, 117, 0);
+  box-shadow: inset 0px 10px 15px rgba(130, 54, 0, 0.3);
+  padding: 50px;
+  height: 150px;
+}
+
+table {
+  box-shadow: 0px 5px 15px rgba(130, 54, 0, 0.5);
+}
+
+.mainheader {
+  padding: 20px;
+}
+
+.v-center-align {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+ /*BUTTON STYLING*/
+ .button {
+   background-color: #ff8300;
+   box-shadow: 0px 5px 15px rgba(130, 54, 0, 0.5);
  }
 
-.sidebar {
-  background-color: #e2e2e2;
-  border-radius: 5px;
+ .button-center {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+ }
+
+ .button_spacing {
+   margin: 0 10px 0 10px;
+ }
+
+ .button_dropshadow {
+
+ }
+
+   /*Button hover states*/
+   .button:hover {
+     background-color: #ff8300;
+     box-shadow: 0px 0px 5px rgba(130, 54, 0, 0.5);
+     transition: box-shadow 0.3s;
+   }
+
+
+/*CALLOUT STYLING*/
+/*fade out animation for the callout box*/
+.callout {
+  left: 35%;
+  right: 35%;
+  box-shadow: 0px 5px 15px rgba(130, 54, 0, 0.5);
+  -webkit-animation: seconds 1.0s forwards;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-delay: 3s;
+  animation: seconds 1.0s forwards;
+  animation-iteration-count: 1;
+  animation-delay: 3s;
+  position: absolute;
 }
 
+@-webkit-keyframes seconds {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes seconds {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+ /*JOB LISTING STYLING*/
+ .job {
+
+   background-color: rgb(229, 117, 0);
+   margin-bottom: 20px;
+   padding: 20px 10px 20px 10px;
+   box-shadow: 0px 5px 15px rgba(130, 54, 0, 0.5);
+ }
+
+ .jobs {
+   background-color: rgb(229, 117, 0);
+   margin-bottom: 20px;
+   padding: 20px 10px 10px 10px;
+   box-shadow: 0px 5px 15px rgba(130, 54, 0, 0.5);
+ }
+
+   .jobs:hover {
+     background-color: #f98000;
+     box-shadow: 0px 0px 0px rgba(130, 54, 0, 0.5);
+     transition: box-shadow 0.3s, background-color 0.3s;
+     /*transition: background-color 0.3s;*/
+   }
+
+
+/*SIDEBAR on employer and user page show*/
 .sidebar .subheader {
   padding-left: 10px;
-}
-
-.job {
-  padding: 20px 15px 15px 15px;
-}
-.jobs {
-  background-color: #e1e1e1;
-  margin-bottom: 20px;
-  border-radius: 10px;
-  padding: 20px 10px 10px 10px;
-}
-hr {
-  margin: -15px 0 0px 0;
 }

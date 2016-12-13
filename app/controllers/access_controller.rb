@@ -1,10 +1,10 @@
 class AccessController < ApplicationController
+  before_action :confirm_logged_in, :except => [:index, :signup_choice, :login, :attempt_login, :logout]
+  before_action :confirm_logged_in_employer, :except => [:index, :signup_choice, :login, :attempt_login, :logout]
+
   layout 'adminPanel'
 
-  before_action :confirm_logged_in, :except => [:login, :attempt_login, :logout]
-
-  def menu
-    # will just display text and links
+  def index
   end
 
   def login
@@ -12,25 +12,37 @@ class AccessController < ApplicationController
   end
 
   def attempt_login
+    # Check to see if both fields in the login form have been filled out
     if params[:username].present? && params[:password].present?
-      found_user = User.where(:username => params[:username]).first
-      if found_user
-        authorized_user = found_user.authenticate(params[:password])
+      # Store the username in a variable for easier use
+      found_user = params[:username]
+      # Then I check whether the where comes back nil or not.
+      # if it comes back false for being nil then it carries on
+      # otherwise it checks against the next
+      if !Employer.where(:username => found_user).first.nil?
+        auth_employer_acct = Employer.where(:username => found_user).first.authenticate(params[:password])
+      elsif !User.where(:username => found_user).first.nil?
+        auth_user_acct = User.where(:username => found_user).first.authenticate(params[:password])
       end
     end
 
-    if authorized_user
-      session[:user_id] = authorized_user.id
-      flash[:notice] = "You are now logged in."
-      redirect_to(admin_path)
+    if auth_user_acct
+      session[:user_id] = auth_user_acct.id
+      flash[:notice] = "You are now logged in as #{auth_user_acct.username}."
+      redirect_to(users_path)
+    elsif auth_employer_acct
+      session[:employer_id] = auth_employer_acct.id
+      flash[:notice] = "You are now logged in as #{auth_employer_acct.username}."
+      redirect_to(employers_path)
     else
-      flash.now[:notice] = "Invalid username/password combination"
+      flash.now[:warning] = "Invalid username/password combination"
       render('login')
     end
   end
 
   def logout
     session[:user_id] = nil
+    session[:employer_id] = nil
     flash[:notice] = "Successfully logged out"
     redirect_to(access_login_path)
   end

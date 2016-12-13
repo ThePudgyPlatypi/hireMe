@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
   layout 'adminPanel'
-  
+
   def index
     @jobs = Job.all.order(created_at: :desc)
   end
@@ -45,7 +45,9 @@ class JobsController < ApplicationController
   end
 
   def destroy
+    @employer = Employer.find(params[:employer_id])
     @job = Job.find(params[:id])
+    @job.user_applications.destroy_all
     @job.destroy
     redirect_to(employer_path(@job.employer_id))
   end

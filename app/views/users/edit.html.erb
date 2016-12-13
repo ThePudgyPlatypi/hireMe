@@ -1,9 +1,12 @@
 <div class="row">
-  <h2 class="subheader">Edit User</h2>
+  <h2 class="subheader text-center mainheader">Edit User</h2>
   <%= form_for(@user) do |user| %>
 
     <%= render(:partial => 'form', :locals => {:user => user}) %>
 
-    <%= user.submit("Update User", :class => "success button") %>
+    <div class="small-4 small-offset-2 columns end">
+      <%= user.submit("Update User", :class => "button button_dropshadow") %>
+    </div>
+
   <% end %>
 </div>

@@ -1,7 +1,21 @@
-<!-- Company name and industry  -->
-<h3 class="subheader">General information</h3>
+
+<h3 class="subheader text-center">General information</h3>
+<!-- log in information -->
 <div class="row">
-  <div class="small-4 columns">
+  <div class="small-4 small-offset-2 columns">
+    <label>Username
+      <%= employer.text_field(:username) %>
+    </label>
+  </div>
+  <div class="small-4 columns end">
+    <label>Password
+      <%= employer.password_field(:password) %>
+    </label>
+  </div>
+</div>
+<!-- Company name and industry  -->
+<div class="row">
+  <div class="small-4 small-offset-2 columns">
     <label>Company Name
       <%= employer.text_field(:company_name) %>
     </label>
@@ -14,7 +28,7 @@
 </div>
 <!-- Founded date and size  -->
 <div class="row">
-  <div class="small-4 columns">
+  <div class="small-4 small-offset-2 columns">
     <label>Founded
       <%= employer.date_field(:founded) %>
     </label>
@@ -27,7 +41,7 @@
 </div>
 <!-- about text box  -->
 <div class="row">
-  <div class="small-8 columns end">
+  <div class="small-8 small-offset-2 columns end">
     <label>About Us
       <%= employer.text_area(:about, :placeholder => "limit 2500 characters", :rows => 8) %>
     </label>
@@ -35,9 +49,9 @@
 </div>
 
 <!-- HQ Address  -->
-<h3 class="subheader">Headquarters Info</h3>
+<h3 class="subheader text-center">Headquarters Info</h3>
 <div class="row">
-  <div class="small-5 columns">
+  <div class="small-5 small-offset-2 columns">
     <label>Address
       <%= employer.text_field(:hq_address) %>
     </label>
@@ -60,7 +74,7 @@
 </div>
 
 <div class="row">
-  <div class="small-3 columns">
+  <div class="small-3 small-offset-2 columns">
     <label>City
       <%= employer.text_field(:hq_city) %>
     </label>
@@ -89,9 +103,9 @@
 </div> -->
 
 <!-- Local Address  -->
-<h3 class="subheader">Local Base Info</h3>
+<h3 class="subheader text-center">Local Base Info</h3>
 <div class="row">
-  <div class="small-5 columns">
+  <div class="small-5 small-offset-2 columns">
     <label>Address
       <%= employer.text_field(:local_address) %>
     </label>
@@ -114,7 +128,7 @@
 </div>
 
 <div class="row">
-  <div class="small-3 columns">
+  <div class="small-3 small-offset-2 columns">
     <label>City
       <%= employer.text_field(:local_city) %>
     </label>
@@ -131,10 +145,10 @@
   </div>
 </div>
 
-<h3 class="subheader">Contact Information</h3>
+<h3 class="subheader text-center">Contact Information</h3>
 <!-- Contact information -->
 <div class="row">
-  <div class="small-4 columns">
+  <div class="small-4 small-offset-2 columns">
     <label>Contact Email
       <%= employer.text_field(:contact_email) %>
     </label>
@@ -147,7 +161,7 @@
 </div>
 <!-- website -->
 <div class="row">
-  <div class="small-6 columns end">
+  <div class="small-6 small-offset-2 columns end">
     <label>Website
       <%= employer.text_field(:website) %>
     </label>
@@ -155,9 +169,9 @@
 </div>
 
 <!-- social menda  -->
-<h3 class="subheader">Social Media</h3>
+<h3 class="subheader text-center">Social Media</h3>
 <div class="row">
-  <div class="small-4 columns">
+  <div class="small-4 small-offset-2 columns">
     <label>Facebook
       <%= employer.text_field(:facebook) %>
     </label>
@@ -170,7 +184,7 @@
 </div>
 
 <div class="row">
-  <div class="small-4 columns">
+  <div class="small-4 small-offset-2 columns">
     <label>Google+
       <%= employer.text_field(:google) %>
     </label>
@@ -183,7 +197,7 @@
 </div>
 
 <div class="row">
-  <div class="small-4 columns end">
+  <div class="small-4 small-offset-2 columns end">
     <label>LinkedIN
       <%= employer.text_field(:linkedin) %>
     </label>

@@ -1,5 +1,5 @@
-<div class="row">
-  <h2 class="subheader">User List</h2>
+<div class="row columns small-10">
+  <h2 class="subheader mainheader">User List</h2>
   <% @users.each do |user| %>
     <table summary="User list table" class="hover">
       <thead>
@@ -11,13 +11,13 @@
       <tbody>
         <tr>
           <td><%= user.username %></td>
-          <td class="textCenter"><%= button_to("Show User", user_path(user), :method => "get", :class => "button") %></td>
-          <td class="textCenter"><%= button_to('Edit User', edit_user_path(user), :method => 'get', :class => 'button') %></td>
+          <td class="textCenter"><%= button_to("Show User", user_path(user), :method => "get", :class=>"button button_dropshadow") %></td>
+          <td class="textCenter"><%= button_to('Edit User', edit_user_path(user), :method => 'get', :class=>"button button_dropshadow") %></td>
           <td class="textCenter"><%= button_to('Delete User', delete_user_path(user), :method => 'get', :class => 'alert button') %></td>
         </tr>
       </tbody>
     </table>
   <% end %>
   <br />
-  <%= button_to("Create User", new_user_path, :method => "get", :class => "button") %>
+  <%= button_to("Create User", new_user_path, :method => "get", :class=>"button success button_dropshadow") %>
 </div>

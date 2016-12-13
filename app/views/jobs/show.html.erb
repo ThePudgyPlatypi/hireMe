@@ -1,11 +1,9 @@
-<div class="row">
-  <h2 class="subheader"><%= @job.position %> at <%= @job.employer.company_name %></h2>
-  <div class="row jobs">
-    <%= render(:partial => 'view', :locals => {:job => @job}) %>
-    <div class="column small-12">
-      <ul class="menu">
-        <li><%= button_to("Apply", new_job_user_application_path(@job), :method => 'get', :class => 'button') %></li>
-      </ul>
-    </div>
+<h2 class="subheader text-center mainheader"><%= @job.position %> at <%= @job.employer.company_name %></h2>
+<div class="row job">
+  <div class="column small-8 small-offset-2">
+  <%= render(:partial => 'view', :locals => {:job => @job}) %>
+    <ul class="menu">
+      <li><%= button_to("Apply", new_job_user_application_path(@job), :method => 'get', :class=>"button button_spacing button_dropshadow") %></li>
+    </ul>
   </div>
 </div>

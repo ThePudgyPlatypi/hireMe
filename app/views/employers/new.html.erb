@@ -1,9 +1,10 @@
 <div class="row">
-  <h2 class="subheader">Create New Employer</h2>
+  <h2 class="subheader text-center mainheader">Create New Employer</h2>
   <%= form_for(@employer) do |employer| %>
 
     <%= render(:partial => 'form', :locals => {:employer => employer}) %>
-
-    <%= employer.submit("Create Employer", :class => "success button") %>
+    <div class="small-4 small-offset-2 columns end">
+      <%= employer.submit("Sign up!", :class => "button button_dropshadow") %>
+    </div>
   <% end %>
 </div>

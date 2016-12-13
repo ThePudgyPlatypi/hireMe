@@ -1,15 +1,13 @@
 <div class="row">
   <%= app.hidden_field(:job_id, :value => params[:job_id]) %>
   <%= app.hidden_field(:user_id, :value => session[:user_id]) %>
-  <div class="small-4 columns">
+  <div class="small-4 small-offset-2 columns">
     <label class="bold">Name</label>
       <%= app.text_field(:name) %>
   </div>
 
-  <div class="small-4 columns">
+  <div class="small-4 columns end">
     <label class="bold">Resume</label>
       <%= app.text_area(:resume) %>
   </div>
-
-
 </div>

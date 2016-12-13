@@ -1,6 +1,6 @@
 class EmployersController < ApplicationController
   layout 'adminPanel'
-  before_action :confirm_logged_in
+  before_action :confirm_logged_in_employer, :except => [:new, :create]
   def index
     @employers = Employer.all.order(:company_name)
   end
@@ -39,6 +39,7 @@ class EmployersController < ApplicationController
   def create
     @employer = Employer.new(employer_params)
     if @employer.save
+      session[:employer_id] = @employer.id
       redirect_to(employer_path(@employer))
       flash[:notice] = "Employer profile created successfully"
     else
@@ -62,10 +63,16 @@ class EmployersController < ApplicationController
 
   def delete
     @employer = Employer.find(params[:id])
+    @jobs = @employer.jobs.all
   end
 
   def destroy
     @employer = Employer.find(params[:id])
+    @jobs = @employer.jobs.all
+    @jobs.each do |app|
+      app.user_applications.destroy
+    end
+    @jobs.destroy_all
     @employer.destroy
     redirect_to(employers_path)
     flash[:notice] = "Employer profile deleted successfully"
@@ -106,7 +113,9 @@ class EmployersController < ApplicationController
       :tumblr,
       :flickr,
       :reddit,
-      :snapchat
+      :snapchat,
+      :password,
+      :username
     )
   end
 end

@@ -1,5 +1,5 @@
 <div class="row">
-  <h2 class="subheader">User <%= @user.username %> Parameters</h2>
+  <h2 class="subheader mainheader">User <%= @user.username %> Parameters</h2>
   <div class="column small-8">
     <table summary="User table" class="hover stack">
       <thead>
@@ -88,7 +88,7 @@
             </div>
             <div class="column small-12">
               <ul class="menu">
-                <li><%= button_to("View Job", job_path(app.job_id), :method => 'get', :class => 'button') %></li>
+                <li><%= button_to("View Job", job_path(app.job_id), :method => 'get', :class => 'button button_dropshadow') %></li>
               </ul>
             </div>
           </div>

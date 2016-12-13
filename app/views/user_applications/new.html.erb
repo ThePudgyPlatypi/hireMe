@@ -1,9 +1,10 @@
 <div class="row">
-  <h2 class="subheader">Apply for job <%= @job.position %></h2>
+  <h2 class="subheader text-center mainheader">Apply for job <%= @job.position %></h2>
   <%= form_for [@job, @app] do |app| %>
 
     <%= render(:partial => 'form', :locals => {:app => app}) %>
-
-    <%= app.submit("Apply", :class => "success button") %>
+    <div class="columns small-4 small-offset-2 end">
+      <%= app.submit("Apply", :class => "button button_dropshadow") %>
+    </div>
   <% end %>
 </div>

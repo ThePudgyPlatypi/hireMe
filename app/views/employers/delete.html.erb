@@ -1,7 +1,7 @@
-<div class="row">
-  <h2 class="subheader">Delete Employer</h2>
+<div class="row v-center-align">
+  <h2 class="subheader text-center mainheader">Delete Employer</h2>
   <%= form_for(@employer, :method => 'delete') do |employer| %>
-    <p>Are you sure you want to delete <%= employer.object.company_name %>'s profile?</p>
-    <%= employer.submit("Delete Employer", :class => "alert button") %>
+    <p class="text-center">Are you sure you want to delete <%= employer.object.company_name %>'s profile?</p>
+    <%= employer.submit("Delete Employer", :class => "alert button button_dropshadow button-center") %>
   <% end %>
 </div>

@@ -1,7 +1,7 @@
 <%= job.hidden_field(:employer_id, :value => params[:employer_id]) %>
 
 <div class="row">
-  <div class="small-6 columns end">
+  <div class="small-6 small-offset-2 columns end">
     <label>Position
       <%= job.text_field(:position) %>
     </label>
@@ -9,7 +9,7 @@
 </div>
 
 <div class="row">
-  <div class="small-8 columns">
+  <div class="small-8 small-offset-2 columns end">
     <label>Description of Position and Duties
       <%= job.text_area(:description, :rows => 8) %>
     </label>
@@ -17,7 +17,7 @@
 </div>
 
 <div class="row">
-  <div class="small-4 columns">
+  <div class="small-4 small-offset-2 columns">
     <label>Salary
       <%= job.text_field(:salary) %>
     </label>

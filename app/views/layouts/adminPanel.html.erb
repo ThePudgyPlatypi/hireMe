@@ -10,18 +10,29 @@
   </head>
 
   <body>
-    <div class="top-bar">
-      <div class="top-bar-left">
-        <ul class="menu">
-          <li class="menu-text">Admin Controls</li>
-          <li><%= link_to('Users', users_path) %></li>
-          <li><%= link_to('Employers', employers_path) %></li>
-          <li><%= link_to('Jobs', jobs_path) %></li>
-        </ul>
-      </div>
-    </div>
-    <div class="row column">
+    <div id="container">
 
+      <!-- Nav bar -->
+      <div class="top-bar">
+        <div class="top-bar-left">
+          <ul class="menu">
+            <li class="menu-text">Admin Controls</li>
+            <li><%= link_to('Home', '/', :class=>"button small button_spacing button_dropshadow") %></li>
+            <li><%= link_to('Users', users_path, :class=>"button small button_spacing button_dropshadow") %></li>
+            <li><%= link_to('Employers', employers_path, :class=>"button small button_spacing button_dropshadow") %></li>
+            <li><%= link_to('Jobs', jobs_path, :class=>"button small button_spacing button_dropshadow") %></li>
+            <li>
+              <% if session[:user_id] || session[:employer_id] %>
+                <%= link_to('Logout', access_logout_path, :class=>"button small button_spacing button_dropshadow") %>
+              <% else %>
+                <%= link_to('Login', access_login_path, :class=>"button small button_spacing button_dropshadow") %>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Flash notice callout blocks -->
       <% if !flash[:notice].blank? %>
         <div class="success callout" data-closable>
           <%= flash[:notice] %>
@@ -31,7 +42,24 @@
         </div>
       <% end %>
 
+      <% if !flash[:warning].blank? %>
+        <div class="alert callout" data-closable>
+          <%= flash[:warning] %>
+          <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <% end %>
+
+      <!-- content -->
       <%= yield %>
+
+
+    </div>
+
+    <!-- footer -->
+    <div class="footer">
+        <p>this is a footer</p>
     </div>
   </body>
 </html>

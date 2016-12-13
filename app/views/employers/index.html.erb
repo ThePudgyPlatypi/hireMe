@@ -1,5 +1,5 @@
-<div class="row">
-  <h2 class="subheader">Employer List</h2>
+<div class="row columns small-10">
+  <h2 class="subheader mainheader">Employer List</h2>
   <% @employers.each do |employer| %>
     <table summary="Employer list table" class="hover">
       <thead>
@@ -11,13 +11,13 @@
       <tbody>
         <tr>
           <td><%= employer.company_name %></td>
-          <td class="textCenter"><%= button_to("Show Employer", employer_path(employer), :method => "get", :class => "button") %></td>
-          <td class="textCenter"><%= button_to('Edit Employer', edit_employer_path(employer), :method => 'get', :class => 'button') %></td>
+          <td class="textCenter"><%= button_to("Show Employer", employer_path(employer), :method => "get", :class=>"button button_dropshadow") %></td>
+          <td class="textCenter"><%= button_to('Edit Employer', edit_employer_path(employer), :method => 'get', :class=>"button button_dropshadow") %></td>
           <td class="textCenter"><%= button_to('Delete Employer', delete_employer_path(employer), :method => 'get', :class => 'alert button') %></td>
         </tr>
       </tbody>
     </table>
   <% end %>
   <br />
-  <%= button_to("Create Employer", new_employer_path, :method => "get", :class => "button") %>
+  <%= button_to("Create Employer", new_employer_path, :method => "get", :class=>"button success button_dropshadow") %>
 </div>
