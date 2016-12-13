@@ -17,6 +17,7 @@ class UserApplicationsController < ApplicationController
     @app = UserApplication.new(app_params)
     if @app.save
       redirect_to(job_path(@job))
+      flash[:notice] = "Congrats and Good luck! You applied successfully"
     else
       render 'new'
     end

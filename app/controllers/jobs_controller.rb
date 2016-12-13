@@ -19,6 +19,7 @@ class JobsController < ApplicationController
     @job = Job.new(job_params)
     if @job.save
       redirect_to(employer_path(@employer))
+      flash[:notice] = "Job listing #{@job.position} created successfully"
     else
       render 'new'
     end
@@ -34,6 +35,7 @@ class JobsController < ApplicationController
     @job = Job.find(params[:id])
     if @job.update_attributes(job_params)
       redirect_to(employer_path(@employer))
+      flash[:notice] = "Job listing #{@job.position} updated successfully"
     else
       render 'edit'
     end
@@ -50,6 +52,7 @@ class JobsController < ApplicationController
     @job.user_applications.destroy_all
     @job.destroy
     redirect_to(employer_path(@job.employer_id))
+    flash[:notice] = "Job listing #{@job.position} deleted successfully"
   end
 
   private
