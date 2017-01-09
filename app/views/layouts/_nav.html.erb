@@ -6,9 +6,12 @@
       <li><%= link_to('Home', '/', :class=>"button small button_spacing button_dropshadow") %></li>
       <li><%= link_to('Jobs', jobs_path, :class=>"button small button_spacing button_dropshadow") %></li>
       <li><%= link_to('Profile', users_path, :class=>"button small button_spacing button_dropshadow") %></li>
-      <li><%= link_to('Employers', employers_path, :class=>"button small button_spacing button_dropshadow") %></li>
       <li>
-        <% @loggedin ? link_to('Logout', access_logout_path, :class=>"button small button_spacing button_dropshadow") : link_to('Login', access_login_path, :class=>"button small button_spacing button_dropshadow")%>
+        <% if session[:user_id] || session[:employer_id] %>
+          <%= link_to('Logout', access_logout_path, :class=>"button small button_spacing button_dropshadow") %>
+        <% else %>
+          <%= link_to('Login', access_login_path, :class=>"button small button_spacing button_dropshadow") %>
+        <% end %>
       </li>
     </ul>
   </div>

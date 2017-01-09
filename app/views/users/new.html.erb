@@ -1,6 +1,15 @@
 <div class="row">
   <h2 class="subheader text-center mainheader">Create New User</h2>
-  <%= form_for(@user) do |user| %>
+  <% if !@user.errors.empty? %>
+    <div class="alert callout" data-closable>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= form_for(@user, html: { multipart: true }) do |user| %>
 
     <%= render(:partial => 'form', :locals => {:user => user}) %>
 

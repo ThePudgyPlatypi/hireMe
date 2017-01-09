@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161213045608) do
+ActiveRecord::Schema.define(version: 20170109044538) do
 
   create_table "applications", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "user_id"
@@ -98,6 +98,7 @@ ActiveRecord::Schema.define(version: 20161213045608) do
     t.datetime "updated_at",                                    null: false
     t.boolean  "admin",                         default: false
     t.string   "password_digest"
+    t.string   "avatar"
   end
 
 end

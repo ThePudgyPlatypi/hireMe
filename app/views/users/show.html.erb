@@ -1,6 +1,7 @@
 <div class="row">
   <h2 class="subheader mainheader">User <%= @user.username %> Parameters</h2>
   <div class="column small-8">
+      <%= image_tag(@user.avatar.url) %>
     <table summary="User table" class="hover stack">
       <thead>
         <tr>

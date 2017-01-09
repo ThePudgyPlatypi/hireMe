@@ -3,9 +3,8 @@ class ApplicationController < ActionController::Base
 
   # Logic for the navigation bar
   # This will be whether a login or logout is shown
-  @loggedin = false
-  if session[:user_id] || session[:employer_id]
-    @loggedin = true
+  def nav_login_button
+    
   end
 
   private
