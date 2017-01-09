@@ -1,6 +1,13 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+  # Logic for the navigation bar
+  # This will be whether a login or logout is shown
+  @loggedin = false
+  if session[:user_id] || session[:employer_id]
+    @loggedin = true
+  end
+
   private
 
   def confirm_logged_in

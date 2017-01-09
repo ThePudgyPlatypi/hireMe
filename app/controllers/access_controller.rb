@@ -2,8 +2,6 @@ class AccessController < ApplicationController
   before_action :confirm_logged_in, :except => [:index, :signup_choice, :login, :attempt_login, :logout]
   before_action :confirm_logged_in_employer, :except => [:index, :signup_choice, :login, :attempt_login, :logout]
 
-  layout 'adminPanel'
-
   def index
   end
 
@@ -29,11 +27,11 @@ class AccessController < ApplicationController
     if auth_user_acct
       session[:user_id] = auth_user_acct.id
       flash[:notice] = "You are now logged in as #{auth_user_acct.username}."
-      redirect_to(users_path)
+      redirect_to(user_path(auth_user_acct.id))
     elsif auth_employer_acct
       session[:employer_id] = auth_employer_acct.id
       flash[:notice] = "You are now logged in as #{auth_employer_acct.username}."
-      redirect_to(employers_path)
+      redirect_to(employer_path(auth_employer_acct.id))
     else
       flash.now[:warning] = "Invalid username/password combination"
       render('login')

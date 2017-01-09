@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
   before_action :confirm_logged_in, :except => [:new, :create]
-  layout 'adminPanel'
 
   def index
     @users = User.all.order(:username)

@@ -1,5 +1,4 @@
 class JobsController < ApplicationController
-  layout 'adminPanel'
 
   def index
     @jobs = Job.all.order(created_at: :desc)

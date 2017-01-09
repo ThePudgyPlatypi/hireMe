@@ -1,0 +1,34 @@
+<!-- Nav bar -->
+<div class="top-bar">
+  <div class="top-bar-left">
+    <ul class="menu">
+      <li class="menu-text">Admin Controls</li>
+      <li><%= link_to('Home', '/', :class=>"button small button_spacing button_dropshadow") %></li>
+      <li><%= link_to('Jobs', jobs_path, :class=>"button small button_spacing button_dropshadow") %></li>
+      <li><%= link_to('Profile', users_path, :class=>"button small button_spacing button_dropshadow") %></li>
+      <li><%= link_to('Employers', employers_path, :class=>"button small button_spacing button_dropshadow") %></li>
+      <li>
+        <% @loggedin ? link_to('Logout', access_logout_path, :class=>"button small button_spacing button_dropshadow") : link_to('Login', access_login_path, :class=>"button small button_spacing button_dropshadow")%>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- Flash notice callout blocks -->
+<% if !flash[:notice].blank? %>
+  <div class="success callout" data-closable>
+    <%= flash[:notice] %>
+    <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% end %>
+
+<% if !flash[:warning].blank? %>
+  <div class="alert callout" data-closable>
+    <%= flash[:warning] %>
+    <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% end %>

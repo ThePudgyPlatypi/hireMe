@@ -1,5 +1,4 @@
 class UserApplicationsController < ApplicationController
-  layout 'adminPanel'
   before_action :confirm_logged_in
   def index
   end

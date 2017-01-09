@@ -1,5 +1,4 @@
 class EmployersController < ApplicationController
-  layout 'adminPanel'
   before_action :confirm_logged_in_employer, :except => [:new, :create]
   def index
     @employers = Employer.all.order(:company_name)
