@@ -34,6 +34,10 @@ gem 'foundation-rails'
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
 
+# Devise for easier user login and such
+# not using until later when i get more important features working
+# gem 'devise', '~> 4.2'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
