@@ -13,8 +13,8 @@
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
-
- */
+ *= require font-awesome
+*/
 
 
 /*GENERAL STYLES*/
@@ -25,25 +25,22 @@
     font-style: normal;
 }*/
 
+
 body, html {
   background-color: #ff8300;
   font-family: 'OpenSans-Regular', sans-serif;
+  height: 100%;
+  width: 100%;
 }
 
 #container {
-  min-height: calc(100vh - 170px);
-  margin-bottom: 20px;
+  /*position: relative;*/
+  /*margin-bottom: 20px;*/
+  /*border: 1px solid black*/
 }
 
 .top-bar {
   box-shadow: 0px 10px 15px rgba(130, 54, 0, 0.3);
-}
-
-.footer {
-  background-color: rgb(229, 117, 0);
-  box-shadow: inset 0px 10px 15px rgba(130, 54, 0, 0.3);
-  padding: 50px;
-  height: 150px;
 }
 
 table {
@@ -61,6 +58,57 @@ table {
   margin-right: -50%;
   transform: translate(-50%, -50%);
 }
+
+/*---------------------------------------------------------*/
+/*Multi purpose styling*/
+
+/*styling for the dark orange rows used in jobs and user pages as well as others. */
+/*this class has a hover property attached to it*/
+.dark-orange-row {
+  background-color: rgb(229, 117, 0);
+  margin-bottom: 20px;
+  padding: 20px 10px 10px 10px;
+  box-shadow: 0px 5px 15px rgba(130, 54, 0, 0.5);
+}
+
+  .dark-orange-row:hover {
+    background-color: #f98000;
+    box-shadow: 0px 0px 0px rgba(130, 54, 0, 0.5);
+    transition: box-shadow 0.3s, background-color 0.3s;
+    /*transition: background-color 0.3s;*/
+  }
+
+/*extra styling for the user page dark orange rows used in multiple things*/
+/*also cancels the hover effect*/
+.user-dark-orange-row {
+  background-color: rgb(229, 117, 0);
+  margin-bottom: 20px;
+  padding: 30px;
+  box-shadow: 0px 5px 15px rgba(130, 54, 0, 0.5);
+}
+
+/*this creates the tab look for user page and any where else this gets used*/
+.tab {
+  display: inline-block;
+  text-align: right;
+  width: 200px;
+  position: absolute;
+  transform: matrix(0, -1, 1, 0, -220, 10);
+  transform-origin: right 0;
+  background-color: inherit;
+  color: inherit;
+  padding-right: 10px;
+}
+/*---------------------------------------------------------*/
+/*navigation styling*/
+
+#offCanvas {
+  padding-top: 80px;
+}
+
+
+
+/*---------------------------------------------------------*/
 
  /*BUTTON STYLING*/
  .button {
@@ -89,6 +137,14 @@ table {
      transition: box-shadow 0.3s;
    }
 
+.menu-button {
+  position: absolute;
+  left: 20px;
+  z-index: 1;
+  color: white;
+}
+
+/*---------------------------------------------------------*/
 
 /*CALLOUT STYLING*/
 /*fade out animation for the callout box*/
@@ -122,31 +178,50 @@ table {
   }
 }
 
- /*JOB LISTING STYLING*/
- .job {
-
-   background-color: rgb(229, 117, 0);
-   margin-bottom: 20px;
-   padding: 20px 10px 20px 10px;
-   box-shadow: 0px 5px 15px rgba(130, 54, 0, 0.5);
- }
-
- .jobs {
-   background-color: rgb(229, 117, 0);
-   margin-bottom: 20px;
-   padding: 20px 10px 10px 10px;
-   box-shadow: 0px 5px 15px rgba(130, 54, 0, 0.5);
- }
-
-   .jobs:hover {
-     background-color: #f98000;
-     box-shadow: 0px 0px 0px rgba(130, 54, 0, 0.5);
-     transition: box-shadow 0.3s, background-color 0.3s;
-     /*transition: background-color 0.3s;*/
-   }
-
+/*---------------------------------------------------------*/
 
 /*SIDEBAR on employer and user page show*/
 .sidebar .subheader {
   padding-left: 10px;
 }
+
+/*------------------------------------------------------------*/
+/*slider styling */
+
+.slider-column-center {
+
+}
+
+.slider-column-right {
+  /*position: absolute;
+  width: 60%;
+  top: 0;
+  bottom: 0;
+  right: 0;*/
+  transition: transform 1s ease-in-out;
+}
+
+/*hover states*/
+.slider-column-center:hover {
+  /*width: 55%;
+  transition: width 1s ease-in-out;*/
+}
+
+.slider-column-center:hover + .slider-column-right {
+  transform: translateX(93%);
+  transition: transform 1s ease-in-out;
+}
+
+.slider-column-center:hover + .slider-column-right > .user-container {
+
+}
+
+/*---------------------------------------------------------*/
+ /*FOOTER STYLING*/
+
+ .footer {
+   position: relative;
+   z-index: 1;
+   background-color: rgb(229, 117, 0);
+   /*height: 170px;*/
+ }

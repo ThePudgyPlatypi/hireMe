@@ -1,6 +1,6 @@
 <h3 class="subheader text-center mainheader">Active Job Listings</h3>
 <% @jobs.each do |job| %>
-  <div class="row jobs">
+  <div class="row dark-orange-row">
     <div class="columns small-8 small-offset-2">
       <%= render(:partial => 'view', :locals => {:job => job}) %>
       <div class="columns small-12">

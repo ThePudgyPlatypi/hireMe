@@ -1,37 +1,16 @@
 <!-- Nav bar -->
-<div class="top-bar">
-  <div class="top-bar-left">
-    <ul class="menu">
-      <li class="menu-text">Admin Controls</li>
-      <li><%= link_to('Home', '/', :class=>"button small button_spacing button_dropshadow") %></li>
-      <li><%= link_to('Jobs', jobs_path, :class=>"button small button_spacing button_dropshadow") %></li>
-      <li><%= link_to('Profile', users_path, :class=>"button small button_spacing button_dropshadow") %></li>
-      <li>
-        <% if session[:user_id] || session[:employer_id] %>
-          <%= link_to('Logout', access_logout_path, :class=>"button small button_spacing button_dropshadow") %>
-        <% else %>
-          <%= link_to('Login', access_login_path, :class=>"button small button_spacing button_dropshadow") %>
-        <% end %>
-      </li>
-    </ul>
-  </div>
+<div class="off-canvas position-left" id="offCanvas" data-off-canvas>
+  <!-- button class="button small button_spacing button_dropshadow" -->
+  <ul class="menu vertical">
+    <li><%= link_to('Home', '/', :class=>"") %></li>
+    <li><%= link_to('Jobs', jobs_path, :class=>"") %></li>
+    <li><%= link_to('Profile', users_path, :class=>"") %></li>
+    <li>
+      <% if session[:user_id] || session[:employer_id] %>
+        <%= link_to('Logout', access_logout_path, :class=>"") %>
+      <% else %>
+        <%= link_to('Login', access_login_path, :class=>"") %>
+      <% end %>
+    </li>
+  </ul>
 </div>
-
-<!-- Flash notice callout blocks -->
-<% if !flash[:notice].blank? %>
-  <div class="success callout" data-closable>
-    <%= flash[:notice] %>
-    <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-<% end %>
-
-<% if !flash[:warning].blank? %>
-  <div class="alert callout" data-closable>
-    <%= flash[:warning] %>
-    <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-<% end %>

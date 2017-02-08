@@ -38,6 +38,9 @@ gem 'mini_magick'
 # not using until later when i get more important features working
 # gem 'devise', '~> 4.2'
 
+# installing font awesome for all the cool icons
+gem 'font-awesome-rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

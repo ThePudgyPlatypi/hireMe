@@ -13,7 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require turbolinks
-//= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(function(){
+  $(document).foundation();
+});
+
+//= require_tree .
+// turbolinks is down here because it interferes with the off-canvas menu
+// and makes it so that when you click
+// on anything in the menu to go to a new page, the menu won't toggle open again
+//= require turbolinks

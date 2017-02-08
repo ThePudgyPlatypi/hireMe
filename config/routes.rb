@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # Route for the choice between user or employer
   get "access/signup_choice"
 
-  
+
   get 'access/login'
   post 'access/attempt_login'
   get 'access/logout'
@@ -14,7 +14,6 @@ Rails.application.routes.draw do
     member do
       get :delete
     end
-
     # Nested jobs so that employers can create new postings! check rails routes
     resources :jobs do
       member do

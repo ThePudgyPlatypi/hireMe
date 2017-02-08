@@ -9,10 +9,29 @@
   </head>
 
   <body>
-    <div id="container">
-      <%= render :partial => "layouts/nav" %>
-          <%= yield %>
-      <!-- <%= render :partial => "layouts/footer" %> -->
+    <%= render :partial => "layouts/nav" %>
+    <div id="container" class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+      <!-- Flash notice callout blocks -->
+      <% if !flash[:notice].blank? %>
+        <div class="success callout" data-closable>
+          <%= flash[:notice] %>
+          <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <% end %>
+
+      <% if !flash[:warning].blank? %>
+        <div class="alert callout" data-closable>
+          <%= flash[:warning] %>
+          <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      <% end %>
+      <%= button_tag( fa_icon 'bars 3x', data: { toggle: "offCanvas" }, type: "span", class: "menu-button") %>
+        <%= yield %>
     </div>
+    <!-- <%= render :partial => "layouts/footer" %> -->
   </body>
 </html>
