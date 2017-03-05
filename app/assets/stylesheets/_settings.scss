@@ -92,7 +92,7 @@ $breakpoint-classes: (small medium large);
 // -----------
 
 $grid-row-width: $global-width;
-$grid-column-count: 20;
+$grid-column-count: 12;
 $grid-column-gutter: (
   small: 0,
   medium: 0,
@@ -400,9 +400,9 @@ $meter-fill-bad: $alert-color;
 // 24. Off-canvas
 // --------------
 
-$offcanvas-size: 200px;
+$offcanvas-size: 300px;
 $offcanvas-background: $primary-color;
-$offcanvas-zindex: 2;
+$offcanvas-zindex: 0;
 $offcanvas-transition-length: 0.5s;
 $offcanvas-transition-timing: ease;
 $offcanvas-fixed-reveal: true;

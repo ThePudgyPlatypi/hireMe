@@ -10,17 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170130232313) do
-
-  create_table "applications", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.integer  "user_id"
-    t.integer  "job_id"
-    t.string   "name"
-    t.text     "resume",     limit: 65535
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.index ["user_id", "job_id"], name: "index_applications_on_user_id_and_job_id", using: :btree
-  end
+ActiveRecord::Schema.define(version: 20170109044538) do
 
   create_table "employers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "company_name"

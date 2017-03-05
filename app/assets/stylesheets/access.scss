@@ -2,9 +2,81 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#first_bg {
-  background-image: url('./background.jpg');
+#index_bg_container {
+  position: relative;
+  background-image: url('./background2.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  height: 100%;
+  width: 100%;
+  height: 100vh;
+}
+
+// --------------------------------------------------
+
+// First page heading styling
+
+.index-menu {
+  padding-left: 30px;
+}
+
+.heading-box {
+  position: absolute;
+  z-index: 1;
+  top: 40%;
+  left: 8%;
+}
+
+.hidden_h1 {
+  visibility: hidden;
+}
+
+.large_headline_first {
+  font-size: 4em;
+  // margin-left:;
+}
+
+.large_headline_second {
+  display: block;
+  font-size: 24em;
+  margin-left: -100px;
+  margin-top: -70px;
+  line-height: .7em;
+}
+
+.heading-box p {
+  // padding-top: ;
+  font-size: 2em;
+}
+
+// --------------------------------------------------
+// Boxes and triangle styling
+
+.trianlge-container-right {
+  position: relative;
+}
+
+.triangle {
+  position: absolute;
+  bottom: 0;
+  left: 30%;
+  width: 0;
+  height: 0;
+  border-left: 400px solid transparent;
+  border-top: 400px solid white;
+}
+
+.triangle-red {
+  border-top: 400px solid #FC4A2A;
+  left: 31%;
+  bottom: -0.5%;
+}
+
+.triangle-orange {
+  border-top: 400px solid #ff8300;
+  left: 32%;
+  bottom: 0;
+}
+
+.triangle-white {
+  bottom: -1%;
 }

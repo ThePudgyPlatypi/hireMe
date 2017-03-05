@@ -62,6 +62,19 @@ table {
 /*---------------------------------------------------------*/
 /*Multi purpose styling*/
 
+.background-gradient-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fc4a2a+9,f65eff+49,ff3800+90,ff3800+90&0.4+0,0.4+50,0.4+100 */
+  background: -moz-linear-gradient(-45deg, rgba(252,74,42,0.4) 0%, rgba(252,74,42,0.4) 9%, rgba(246,94,255,0.4) 49%, rgba(246,93,249,0.4) 50%, rgba(255,56,0,0.4) 90%, rgba(255,56,0,0.4) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg, rgba(252,74,42,0.4) 0%,rgba(252,74,42,0.4) 9%,rgba(246,94,255,0.4) 49%,rgba(246,93,249,0.4) 50%,rgba(255,56,0,0.4) 90%,rgba(255,56,0,0.4) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg, rgba(252,74,42,0.4) 0%,rgba(252,74,42,0.4) 9%,rgba(246,94,255,0.4) 49%,rgba(246,93,249,0.4) 50%,rgba(255,56,0,0.4) 90%,rgba(255,56,0,0.4) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66fc4a2a', endColorstr='#66ff3800',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
 /*styling for the dark orange rows used in jobs and user pages as well as others. */
 /*this class has a hover property attached to it*/
 .dark-orange-row {
@@ -99,6 +112,11 @@ table {
   color: inherit;
   padding-right: 10px;
 }
+
+.orange-paragraph {
+  color: #ff8300;
+}
+
 /*---------------------------------------------------------*/
 /*navigation styling*/
 
@@ -106,6 +124,9 @@ table {
   padding-top: 80px;
 }
 
+.menu {
+
+}
 
 
 /*---------------------------------------------------------*/
@@ -114,6 +135,22 @@ table {
  .button {
    background-color: #ff8300;
    box-shadow: 0px 5px 15px rgba(130, 54, 0, 0.5);
+ }
+
+ .button-large {
+   background-color: #ff8300;
+   box-shadow: 0px 5px 15px rgba(130, 54, 0, 0.5);
+ }
+
+ .button-red{
+   background-color: #FC4A2A;
+   box-shadow: 0px 5px 15px rgba(130, 54, 0, 0.5);
+ }
+
+ .button-red-large {
+   background-color: #FC4A2A;
+   box-shadow: 0px 5px 15px rgba(130, 54, 0, 0.5);
+   width: 200px;
  }
 
  .button-center {
@@ -137,8 +174,15 @@ table {
      transition: box-shadow 0.3s;
    }
 
+   .button-red:hover, .button-red-large:hover {
+     background-color: #FC4A2A;
+     box-shadow: 0px 0px 5px rgba(130, 54, 0, 0.5);
+     transition: box-shadow 0.3s;
+   }
+
 .menu-button {
-  position: absolute;
+  position: fixed;
+  top: 20px;
   left: 20px;
   z-index: 1;
   color: white;
