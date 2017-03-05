@@ -62,6 +62,12 @@ table {
 /*---------------------------------------------------------*/
 /*Multi purpose styling*/
 
+.user_picture {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
 .background-gradient-overlay {
   position: absolute;
   top: 0;
