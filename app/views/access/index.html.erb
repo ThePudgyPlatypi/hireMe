@@ -4,56 +4,114 @@
     <!-- this is the orange overlay that is absolute so that it doesnt make everything opaque -->
     <!-- <span class="orange_overlay"></span> -->
     <div class="heading-box">
+      <!-- hidden class for search purposes -->
         <h1 class="hidden_h1">Hire.Me</h1>
-          <span class="large_headline_first">hire.</span>
+          <span class="large_headline_first orange-paragraph">hire.</span>
           <span class="large_headline_second">me</span>
         <p class="orange-paragraph">helping working students succeed</p>
         <ul class="menu index-menu">
           <li>
-              <%= button_to("Sign Up", "access/signup_choice", :class=>"button button-red-large button_spacing") %>
+              <%= button_to("sign Up", access_signup_choice_path, :method => 'get', :class=>"button button-red-large button_spacing") %>
           </li>
           <li>
               <%= link_to("login", "access/login") %>
           </li>
         </ul>
     </div>
+
+  </div>
+  <div class="index-search-bar">
+    <ul class="menu search-menu">
+      <li>
+        <%= button_to("search", "", :class=>"button button_spacing search-button") %>
+      </li>
+      <li>
+        <%= text_field_tag "placeholder", nil, :class=>"search-field" %>
+      </li>
+    </ul>
   </div>
 </div>
 
 <div class="row index-content-row">
-  <div class="columns small-6">
+  <div class="columns medium-6 small-12 picture-index-row">
     <div class="row column spacer">
     </div>
+
     <div class="row column" id="picture-index-row-1">
-      <%= image_tag("shaking-hands.jpg", :class => "user_picture") %>
+      <div class="gradient-overlay gradient-overlay-index"></div>
+      <div class="triangle-orange">
+        <%= image_tag("triangles.svg", :class => "triangle") %>
+      </div>
     </div>
   </div>
 
-  <div class="columns small-6">
+  <div class="columns medium-6 small-12">
     <div class="row column spacer spacer-orange">
     </div>
-    <div class="row column">
-      <div class="triangle triangle-white"></div>
-      <div class="triangle triangle-red"></div>
-      <div class="triangle triangle-orange"></div>
+
+    <div class="row column index-content">
       <h2>What?</h2>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
         exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
         in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
          occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-       incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-       exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-       in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
   </div>
 </div>
 
-<div class="row">
-  <div class="columns small-12">
-    <h2>Why?</h2>
+<div class="row index-content-row">
+  <div class="columns medium-6 small-12">
+    <div class="row column spacer spacer-white">
+    </div>
+
+    <div class="row column index-content white-block">
+      <h2>Why?</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+         occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+  </div>
+
+  <div class="columns medium-6 small-12">
+    <div class="row column spacer">
+    </div>
+
+    <div class="row column picture-index-row" id="picture-index-row-2">
+      <div class="gradient-overlay gradient-overlay-index"></div>
+      <div class="triangle-white">
+        <%= image_tag("triangles-white.svg", :class => "triangle") %>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="row index-content-row">
+  <div class="columns medium-6 small-12 picture-index-row">
+    <div class="row column spacer spacer-white">
+    </div>
+
+    <div class="row column" id="picture-index-row-3">
+      <div class="triangle-orange">
+        <%= image_tag("triangles.svg", :class => "triangle-none-image-gradient") %>
+      </div>
+    </div>
+  </div>
+
+  <div class="columns medium-6 small-12">
+    <div class="row column spacer spacer-orange">
+    </div>
+
+    <div class="row column index-content">
+      <h2>How?</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+         occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
   </div>
 </div>

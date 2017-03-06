@@ -1,14 +1,25 @@
 <!-- Nav bar -->
-  <!-- button class="button small button_spacing button_dropshadow" -->
-  <ul class="menu vertical">
-    <li><%= link_to('Home', '/', :class=>"") %></li>
-    <li><%= link_to('Jobs', jobs_path, :class=>"") %></li>
-    <li><%= link_to('Profile', users_path, :class=>"") %></li>
-    <li>
-      <% if session[:user_id] || session[:employer_id] %>
-        <%= link_to('Logout', access_logout_path, :class=>"") %>
-      <% else %>
-        <%= link_to('Login', access_login_path, :class=>"") %>
-      <% end %>
-    </li>
-  </ul>
+<button class="close-button" aria-label="Close menu" type="button" data-close>
+  <span aria-hidden="true">&times;</span>
+</button>
+<!-- button class="button small button_spacing button_dropshadow" -->
+<ul class="menu vertical text-right">
+  <li><%= link_to('home', '/', :class=>"") %></li>
+  <li><%= link_to('jobs', jobs_path, :class=>"") %></li>
+  <li>
+    <% if session[:user_id] %>
+      <%= link_to('profile', user_path(session[:user_id]), :class=>"") %>
+    <% elsif session[:employer_id] %>
+      <%= link_to('profile', employer_path(session[:employer_id]), :class=>"") %>
+    <% else %>
+      <%= link_to('sign up', access_signup_choice_path, :class => "") %>
+    <% end %>
+  </li>
+  <li>
+    <% if session[:user_id] || session[:employer_id] %>
+      <%= link_to('logout', access_logout_path, :class=>"") %>
+    <% else %>
+      <%= link_to('login', access_login_path, :class=>"") %>
+    <% end %>
+  </li>
+</ul>

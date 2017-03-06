@@ -2,9 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// ---------------------------------------
+// Index styling
 #index_bg_container {
   position: relative;
-  background-image: url('./background2.jpg');
+  background-image: url('./designimage.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -14,8 +16,39 @@
 .index-content-row {
   // margin-top: -1.5em;
   transform: translateY(-20px);
-  border: 1px solid black;
+  // border: 1px solid black;
+  max-height: 400px;
+  // max-height: 500px;
 }
+
+.index-content {
+}
+
+.index-content p {
+  padding: 50px 50px 0 50px;
+}
+
+#picture-index-row-1 {
+  background-image: url('./pride-in-handshake.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 380px;
+}
+
+#picture-index-row-2 {
+  background-image: url('./graduation2.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 380px;
+}
+
+#picture-index-row-3 {
+  background-color: white;
+  height: 380px;
+}
+
 // --------------------------------------------------
 
 // First page heading styling
@@ -27,7 +60,7 @@
 .heading-box {
   position: absolute;
   z-index: 1;
-  top: 40%;
+  top: 20%;
   left: 8%;
 }
 
@@ -36,16 +69,16 @@
 }
 
 .large_headline_first {
-  font-size: 4em;
+  font-size: 3em;
   // margin-left:;
 }
 
 .large_headline_second {
   display: block;
-  font-size: 24em;
+  font-size: 20em;
   margin-left: -100px;
   margin-top: -70px;
-  line-height: .7em;
+  line-height: .8em;
 }
 
 .heading-box p {
@@ -65,30 +98,46 @@
   background-color: #ff8300;
 }
 
-#picture-index-row-1 {
+.spacer-white {
+  background-color: #fff;
+}
 
+.white-block {
+  background-color: white;
+  height: 380px;
+  color: #ff8300;
+  text-align: right;
+}
+
+.white-block h2 {
+  color: #ff8300;
+  text-align: right;
 }
 
 .triangle {
-  position: absolute;
-  bottom: 0;
-  border-left: 400px solid transparent;
-  border-top: 400px solid white;
+  transform: translateY(-400px);
+  height: 400px;
+  // float: right;
 }
 
-.triangle-red {
-  border-top: 400px solid #FC4A2A;
-  left: 31%;
-  bottom: -0.5%;
+.triangle-none-image-gradient {
+  transform: translateY(-20px);
+  height: 400px;
 }
 
 .triangle-orange {
-  border-top: 400px solid #ff8300;
-  left: 32%;
-  bottom: 0;
+  text-align: right;
 }
 
 .triangle-white {
-  left: 30%;
-  bottom: -1%;
+  text-align: left;
 }
+
+// --------------------------------------------------
+// Login and signup styling
+
+.content-expand {
+  height: 100vh;
+}
+
+// --------------------------------------------------

@@ -1,14 +1,29 @@
-<h3 class="subheader text-center mainheader">Active Job Listings</h3>
-<% @jobs.each do |job| %>
-  <div class="row dark-orange-row">
-    <div class="columns small-8 small-offset-2">
-      <%= render(:partial => 'view', :locals => {:job => job}) %>
-      <div class="columns small-12">
-        <ul class="menu">
-          <li><%= button_to("Apply", new_job_user_application_path(job), :method => 'get', :class=>"button button_spacing button_dropshadow") %></li>
-          <li><%= button_to("View", job_path(job), :method => 'get', :class=>"button button_spacing button_dropshadow") %></li>
-        </ul>
+<div class="row content-expand job-board">
+  <div class="columns medium-12">
+    <h3 class="subheader text-center mainheader">Active Job Listings</h3>
+    <% @jobs.each do |job| %>
+      <div class="row job orange-row">
+        <div class="columns small-3 pic-col">
+          <%= render(:partial => 'view', :locals => {:job => job}) %>
+        <div class="columns small-3 title-col">
+          <img src="http://placehold.it/350x150">
+        </div>
+        <div class="columns small-3 aag-col">
+          <img src="http://placehold.it/350x150">
+        </div>
+        <div class="columns small-3 match-col">
+          <img src="http://placehold.it/350x150">
+        </div>
       </div>
-    </div>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>
+
+
+<!-- <div class="columns small-12">
+  <ul class="menu">
+    <li> button_to("Apply", new_job_user_application_path(job), :method => 'get', :class=>"button button_spacing button_dropshadow") %></li>
+    <li> button_to("View", job_path(job), :method => 'get', :class=>"button button_spacing button_dropshadow") %></li>
+  </ul>
+</div> -->

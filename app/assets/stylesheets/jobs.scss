@@ -2,9 +2,53 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 /*JOB LISTING STYLING*/
+.job-board {
+  background-color: white;
+}
+
 .job {
-  background-color: rgb(229, 117, 0);
-  margin-bottom: 20px;
-  padding: 20px 10px 20px 10px;
   box-shadow: 0px 5px 15px rgba(130, 54, 0, 0.5);
 }
+
+// job boards
+/*styling for the dark orange rows used in jobs and user pages as well as others. */
+/*this class has a hover property attached to it*/
+.orange-row {
+  background-color: #ff8300;
+  margin-bottom: 20px;
+}
+
+  .orange-row:hover {
+    background-color: #f98000;
+    box-shadow: 0px 0px 0px rgba(130, 54, 0, 0.5);
+    transition: box-shadow 0.3s, background-color 0.3s;
+    /*transition: background-color 0.3s;*/
+  }
+
+.red-row {
+  // background-color: ;
+  margin-bottom: 20px;
+  padding: 20px 10px 10px 10px;
+  box-shadow: 0px 5px 15px rgba(130, 54, 0, 0.5);
+}
+
+  .red-row:hover {
+    background-color: #f98000;
+    box-shadow: 0px 0px 0px rgba(130, 54, 0, 0.5);
+    transition: box-shadow 0.3s, background-color 0.3s;
+    /*transition: background-color 0.3s;*/
+  }
+
+.white-row {
+  background-color: rgb(229, 117, 0);
+  margin-bottom: 20px;
+  padding: 20px 10px 10px 10px;
+  box-shadow: 0px 5px 15px rgba(130, 54, 0, 0.5);
+}
+
+  .white-row:hover {
+    background-color: #f98000;
+    box-shadow: 0px 0px 0px rgba(130, 54, 0, 0.5);
+    transition: box-shadow 0.3s, background-color 0.3s;
+    /*transition: background-color 0.3s;*/
+  }

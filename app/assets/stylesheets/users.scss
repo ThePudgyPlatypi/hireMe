@@ -27,23 +27,30 @@
   right: 65%;
 }
 
-.gradient-overlay {
-  position: relative;
+.user_picture {
   height: 100%;
   width: 100%;
-  transform: translateY(-100%);
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff8300+7,dd668f+51,fc4a2a+100&0.5+1,0.25+51,0.5+100 */
-  background: -moz-linear-gradient(-45deg,  rgba(255,131,0,0.5) 1%, rgba(255,131,0,0.47) 7%, rgba(221,102,143,0.25) 51%, rgba(252,74,42,0.5) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(-45deg,  rgba(255,131,0,0.5) 1%,rgba(255,131,0,0.47) 7%,rgba(221,102,143,0.25) 51%,rgba(252,74,42,0.5) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(135deg,  rgba(255,131,0,0.5) 1%,rgba(255,131,0,0.47) 7%,rgba(221,102,143,0.25) 51%,rgba(252,74,42,0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ff8300', endColorstr='#80fc4a2a',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  object-fit: cover;
 }
+
 // moved to application.css
-// .user_picture {
+// .gradient-overlay {
+//   position: relative;
 //   height: 100%;
 //   width: 100%;
-//   object-fit: cover;
+//   transform: translateY(-100%);
+//   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff8300+7,dd668f+51,fc4a2a+100&0.5+1,0.25+51,0.5+100 */
+//   background: -moz-linear-gradient(-45deg,  rgba(255,131,0,0.5) 1%, rgba(255,131,0,0.47) 7%, rgba(221,102,143,0.25) 51%, rgba(252,74,42,0.5) 100%); /* FF3.6-15 */
+//   background: -webkit-linear-gradient(-45deg,  rgba(255,131,0,0.5) 1%,rgba(255,131,0,0.47) 7%,rgba(221,102,143,0.25) 51%,rgba(252,74,42,0.5) 100%); /* Chrome10-25,Safari5.1-6 */
+//   background: linear-gradient(135deg,  rgba(255,131,0,0.5) 1%,rgba(255,131,0,0.47) 7%,rgba(221,102,143,0.25) 51%,rgba(252,74,42,0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+//   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ff8300', endColorstr='#80fc4a2a',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 // }
+
+.user_picture {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
 
 .user-picture-info {
   position: absolute;

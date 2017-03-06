@@ -62,12 +62,6 @@ table {
 /*---------------------------------------------------------*/
 /*Multi purpose styling*/
 
-.user_picture {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
 .background-gradient-overlay {
   position: absolute;
   top: 0;
@@ -81,21 +75,21 @@ table {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66fc4a2a', endColorstr='#66ff3800',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
-/*styling for the dark orange rows used in jobs and user pages as well as others. */
-/*this class has a hover property attached to it*/
-.dark-orange-row {
-  background-color: rgb(229, 117, 0);
-  margin-bottom: 20px;
-  padding: 20px 10px 10px 10px;
-  box-shadow: 0px 5px 15px rgba(130, 54, 0, 0.5);
+.gradient-overlay {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  transform: translateY(-100%);
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ff8300+7,dd668f+51,fc4a2a+100&0.5+1,0.25+51,0.5+100 */
+  background: -moz-linear-gradient(-45deg,  rgba(255,131,0,0.5) 1%, rgba(255,131,0,0.47) 7%, rgba(221,102,143,0.25) 51%, rgba(252,74,42,0.5) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg,  rgba(255,131,0,0.5) 1%,rgba(255,131,0,0.47) 7%,rgba(221,102,143,0.25) 51%,rgba(252,74,42,0.5) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg,  rgba(255,131,0,0.5) 1%,rgba(255,131,0,0.47) 7%,rgba(221,102,143,0.25) 51%,rgba(252,74,42,0.5) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ff8300', endColorstr='#80fc4a2a',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
-  .dark-orange-row:hover {
-    background-color: #f98000;
-    box-shadow: 0px 0px 0px rgba(130, 54, 0, 0.5);
-    transition: box-shadow 0.3s, background-color 0.3s;
-    /*transition: background-color 0.3s;*/
-  }
+.gradient-overlay-index {
+  transform: translateY(0%);
+}
 
 /*extra styling for the user page dark orange rows used in multiple things*/
 /*also cancels the hover effect*/
@@ -128,6 +122,11 @@ table {
 
 #offCanvas {
   padding-top: 80px;
+  padding-right: 40px;
+}
+
+.close-button {
+  color: white;
 }
 
 .menu {
@@ -192,6 +191,45 @@ table {
   left: 20px;
   z-index: 1;
   color: white;
+}
+
+/*---------------------------------------------------------*/
+/*search bar styling*/
+/*text input styling*/
+
+.index-search-bar {
+  position: fixed;
+  top: 20px;
+  left: 80px;
+  z-index: 1;
+}
+
+.search-menu li {
+  display: inline-block;
+}
+
+.search-button {
+  height: 50px;
+  width: 100px;
+}
+
+.search-field {
+  opacity: 0.5;
+  background-color: white;
+  border-radius: 0;
+  color: black;
+  height: 50px;
+  width: 300px;
+}
+
+.search-field:active,
+.search-field:hover,
+.search-field:focus {
+  background-color: #e2e2e2;
+}
+
+.search-field:hover {
+  box-shadow: 0px 0px 5px rgba(130, 54, 0, 0.5);
 }
 
 /*---------------------------------------------------------*/
