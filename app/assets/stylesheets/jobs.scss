@@ -2,12 +2,52 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 /*JOB LISTING STYLING*/
+#job-header {
+  margin-top: 60px;
+  font-size: 6em;
+}
+
 .job-board {
-  background-color: white;
+  background-image: url("triangles-reflect.svg");
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-attachment: fixed;
+  background-size: 50%;
+  background-color: #f2f2f2;
+  height: 100%;
 }
 
 .job {
+  position: relative;
+  padding: 40px;
   box-shadow: 0px 5px 15px rgba(130, 54, 0, 0.5);
+  width: 80%;
+  margin-bottom: 60px;
+  z-index: 1;
+  display: inline-block;
+  text-align: left;
+}
+
+.hover-box {
+  position: absolute;;
+  background-color: #e5e5e5;
+  margin-top: -130px;
+  margin-left: 15%;
+  color: black;
+  z-index: 0;
+  box-shadow: 0px 5px 15px rgba(130, 54, 0, 0.5);
+  // check the global radius
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.hover-box p {
+  padding: 20px 20px 0 20px;
+}
+
+.job:hover + .hover-box {
+  margin-top: -70px;
+  transition: margin-top 0.5s ease-in-out;
 }
 
 // job boards
@@ -15,40 +55,30 @@
 /*this class has a hover property attached to it*/
 .orange-row {
   background-color: #ff8300;
-  margin-bottom: 20px;
+  padding: 20px 10px 10px 10px;
 }
-
-  .orange-row:hover {
-    background-color: #f98000;
-    box-shadow: 0px 0px 0px rgba(130, 54, 0, 0.5);
-    transition: box-shadow 0.3s, background-color 0.3s;
-    /*transition: background-color 0.3s;*/
-  }
 
 .red-row {
   // background-color: ;
-  margin-bottom: 20px;
   padding: 20px 10px 10px 10px;
   box-shadow: 0px 5px 15px rgba(130, 54, 0, 0.5);
 }
-
-  .red-row:hover {
-    background-color: #f98000;
-    box-shadow: 0px 0px 0px rgba(130, 54, 0, 0.5);
-    transition: box-shadow 0.3s, background-color 0.3s;
-    /*transition: background-color 0.3s;*/
-  }
 
 .white-row {
   background-color: rgb(229, 117, 0);
-  margin-bottom: 20px;
   padding: 20px 10px 10px 10px;
   box-shadow: 0px 5px 15px rgba(130, 54, 0, 0.5);
 }
 
-  .white-row:hover {
-    background-color: #f98000;
-    box-shadow: 0px 0px 0px rgba(130, 54, 0, 0.5);
-    transition: box-shadow 0.3s, background-color 0.3s;
-    /*transition: background-color 0.3s;*/
-  }
+// this will be the information box that drops out of the job listing
+.information {
+  background-color: #e5e5e5;
+  height: 0;
+  width: 70%;
+  margin-top: -70px;
+  display: inline-block;
+}
+
+.information-slide {
+  height: 600px;
+}

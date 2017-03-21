@@ -1,24 +1,101 @@
 <div class="row content-expand job-board">
-  <div class="columns medium-12">
-    <h3 class="subheader text-center mainheader">Active Job Listings</h3>
+  <div class="column medium-12">
+    <div class="index-search-bar">
+      <ul class="menu search-menu">
+        <li>
+          <%= button_to("search", "", :class=>"button button_spacing search-button") %>
+        </li>
+        <li>
+          <%= text_field_tag "placeholder", nil, :class=>"search-field" %>
+        </li>
+        <li>
+          <%= button_to("filter", "", :class=>"button button_spacing search-button") %>
+        </li>
+      </ul>
+    </div>
+    <h1 class="mainheader" id="job-header">Job Listings</h3>
+      
     <% @jobs.each do |job| %>
-      <div class="row job orange-row">
-        <div class="columns small-3 pic-col">
-          <%= render(:partial => 'view', :locals => {:job => job}) %>
-        <div class="columns small-3 title-col">
-          <img src="http://placehold.it/350x150">
+      <div class="row column" style="text-align: center;">
+        <div class="row job orange-row">
+          <div class="column small-3 pic-col">
+            <img src="http://placehold.it/250x250">
+             <!-- render(:partial => 'view', :locals => {:job => job}) %> -->
+           </div>
+
+            <div class="column small-3 title-col">
+              <h3>Job</h3>
+              <p>
+                <%= job.employer.company_name %>
+              </p>
+            </div>
+
+            <div class="column small-3 aag-col">
+              <h3>at a glance:</h3>
+              <p>
+                <%= job.position %>
+              </p>
+              <p>
+                <%= job.description %>
+              </p>
+            </div>
+
+            <div class="column small-3 match-col">
+              <h3>match</h3>
+              <img src="http://placehold.it/350x200">
+            </div>
+          </div>
+
+          <div class="hover-box">
+            <p>Click for more job information</p>
+          </div>
+
+          <div class="information">
+            <div class="row">
+              <div class="columns small-6">
+                <p>There will be stuff here</p>
+                <p>
+                  <%= job.position %>
+                </p>
+                <p>
+                  <%= job.description %>
+                </p>
+              </div>
+              <div class="columns small-6">
+                <p>There will be more things here</p>
+                <p>
+                  <%= job.employer.company_name %>
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="columns small-3 aag-col">
-          <img src="http://placehold.it/350x150">
-        </div>
-        <div class="columns small-3 match-col">
-          <img src="http://placehold.it/350x150">
-        </div>
-      </div>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+
+    </div>
 </div>
+
+<script>
+  function informationToggle(jobs) {
+    for(var job = 0; job < jobs.length; job++) {
+      jobs[job].addEventListener('click', function(e) {
+        var currentJob = this;
+        for(var job = 0; job < jobs.length; job++) {
+          if(currentJob != jobs[job]) {
+            jobs[job].classList.remove('information-slide');
+          } else if (currentJob.classList.contains('information-slide') === true) {
+            currentJob.classList.remove('information-slide');
+          } else {
+            currentJob.classList.add('information-slide');
+          }
+        };
+        e.preventDefault();
+      });
+    };
+  };
+
+  informationToggle(document.querySelectorAll('job'));
+</script>
 
 
 <!-- <div class="columns small-12">
