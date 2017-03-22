@@ -5,12 +5,16 @@ window.onload = function() {
   var jobs = document.getElementsByClassName('job');
   var job_information = document.getElementsByClassName('information');
 
-  function informationSlider() {
-    job_information[0].classList.toggle('information-slide');
+  function informationSlider(e) {
+    for(var i = 0; i < jobs.length; i++) {
+      if (jobs[i] === this) {
+        job_information[i].classList.toggle('information-slide');
+      };
+    };
   };
 
   for(var i=0; i < jobs.length; i++) {
-    console.log(i);
+    // console.log(i);
     jobs[i].addEventListener('click', informationSlider, false);
   };
 };

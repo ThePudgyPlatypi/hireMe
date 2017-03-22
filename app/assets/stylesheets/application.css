@@ -64,6 +64,7 @@ table {
 
 .background-gradient-overlay {
   position: absolute;
+  transition: opacity 0.5s ease-in-out;
   top: 0;
   right: 0;
   bottom: 0;

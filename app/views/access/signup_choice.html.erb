@@ -1,19 +1,11 @@
-<div class="row expanded content-expand">
-  <div class="columns small-12">
-    <!-- this is the orange overlay that is absolute so that it doesnt make everything opaque -->
-    <!-- <span class="orange_overlay"></span> -->
-    <div class="v-center-align">
-        <div class="menu-centered">
-          <h1>Who are you?</h1>
-          <ul class="menu">
-            <li>
-                <%= link_to("Student", new_user_path, :class=>"button button_spacing button_dropshadow") %>
-            </li>
-            <li>
-                <%= link_to("Employer", new_employer_path, :class=>"button button_spacing button_dropshadow") %>
-            </li>
-          </ul>
-        </div>
-    </div>
+<div class="row expanded">
+  <h1 class="signup-headline v-center-align">Who are you?</h1>
+  <div class="columns small-6 content-expand" id="student-signup">
+    <div class="background-gradient-overlay"></div>
+    <%= link_to("Student", new_user_path, :class=>"signup-button") %>
+  </div>
+  <div class="columns small-6 content-expand" id="employer-signup">
+    <div class="background-gradient-overlay"></div>
+    <%= link_to("Employer", new_employer_path, :class=>"signup-button") %>
   </div>
 </div>

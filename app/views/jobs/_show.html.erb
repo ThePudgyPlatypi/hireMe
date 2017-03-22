@@ -1,0 +1,8 @@
+<div class="row">
+  <div class="column small-8 small-offset-2">
+  <%= render(:partial => 'view', :locals => {:job => job}) %>
+    <ul class="menu">
+      <li><%= button_to("Apply", new_job_user_application_path(job), :method => 'get', :class=>"button button_spacing button_dropshadow") %></li>
+    </ul>
+  </div>
+</div>

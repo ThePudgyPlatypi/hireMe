@@ -14,7 +14,7 @@
       </ul>
     </div>
     <h1 class="mainheader" id="job-header">Job Listings</h3>
-      
+
     <% @jobs.each do |job| %>
       <div class="row column" style="text-align: center;">
         <div class="row job orange-row">
@@ -51,7 +51,7 @@
           </div>
 
           <div class="information">
-            <div class="row">
+            <!-- <div class="row">
               <div class="columns small-6">
                 <p>There will be stuff here</p>
                 <p>
@@ -67,36 +67,14 @@
                   <%= job.employer.company_name %>
                 </p>
               </div>
-            </div>
+            </div> -->
+            <%= render(:partial => 'show', :locals => {:job => job}) %>
           </div>
         </div>
       <% end %>
 
     </div>
 </div>
-
-<script>
-  function informationToggle(jobs) {
-    for(var job = 0; job < jobs.length; job++) {
-      jobs[job].addEventListener('click', function(e) {
-        var currentJob = this;
-        for(var job = 0; job < jobs.length; job++) {
-          if(currentJob != jobs[job]) {
-            jobs[job].classList.remove('information-slide');
-          } else if (currentJob.classList.contains('information-slide') === true) {
-            currentJob.classList.remove('information-slide');
-          } else {
-            currentJob.classList.add('information-slide');
-          }
-        };
-        e.preventDefault();
-      });
-    };
-  };
-
-  informationToggle(document.querySelectorAll('job'));
-</script>
-
 
 <!-- <div class="columns small-12">
   <ul class="menu">
