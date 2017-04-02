@@ -8,13 +8,6 @@
 }
 
 .job-board {
-  background-image: url("triangles-reflect.svg");
-  background-repeat: no-repeat;
-  background-position: left top;
-  background-attachment: fixed;
-  background-size: 50%;
-  background-color: #f2f2f2;
-  height: 100%;
 }
 
 .job {
@@ -53,22 +46,7 @@
 // job boards
 /*styling for the dark orange rows used in jobs and user pages as well as others. */
 /*this class has a hover property attached to it*/
-.orange-row {
-  background-color: #ff8300;
-  padding: 20px 10px 10px 10px;
-}
 
-.red-row {
-  // background-color: ;
-  padding: 20px 10px 10px 10px;
-  box-shadow: 0px 5px 15px rgba(130, 54, 0, 0.5);
-}
-
-.white-row {
-  background-color: rgb(229, 117, 0);
-  padding: 20px 10px 10px 10px;
-  box-shadow: 0px 5px 15px rgba(130, 54, 0, 0.5);
-}
 
 // this will be the information box that drops out of the job listing
 .information {
@@ -80,8 +58,15 @@
   margin-top: -70px;
   display: inline-block;
   z-index: 1;
+  text-align: left;
+}
+
+.information label {
+  color: black;
+  font-weight: bold;
 }
 
 .information-slide {
   height: 100%;
+  padding: 50px;
 }

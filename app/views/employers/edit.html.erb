@@ -1,10 +1,80 @@
 <div class="row">
-  <h2 class="subheader text-center mainheader">Edit Employer</h2>
-  <%= form_for(@employer) do |employer| %>
+  <div class="columns small-12 employer-image-header">
+    <!-- This will be a header image for the employer -->
+    <%= image_tag("building.jpg", :class => "cover-picture", :alt => "") %>
+    <div class="gradient-overlay"></div>
+  </div>
+  <div class="picture-info-box">
+    <%= image_tag(@employer.logo, :alt => "logo", :class => "employee-logo") %>
+    <%= form_for(@employer) do |employer| %>
+      <span class="user-picture-edit-field">
+        <%= employer.file_field(:logo, :accept => "image/png, image/gif, image/jpeg", :class => "button file-field-original") %>
+        <%= employer.submit("Change Picture", :class => "button") %>
+      </span>
+    <% end %>
+    <h1 class="mainheader"><%= @employer.company_name %></h1>
+    <ul class="employer-contact-information">
+      <li><%= best_in_place @employer, :contact_email %></li>
+      <li><%= best_in_place @employer, :website %></li>
+      <li><%= best_in_place @employer, :contact_phone %></li>
+    </ul>
+  </div>
+</div>
 
-    <%= render(:partial => 'form', :locals => {:employer => employer}) %>
-    <div class="columns small-8 small-offset-2 end">
-      <%= employer.submit("Update Employer", :class => "button button_dropshadow") %>
-    </div>
-  <% end %>
+<div class="row">
+  <!-- <h2 class="subheader mainheader">Employer <%= @employer.company_name %> Parameters</h2> -->
+  <div class="columns large-4 small-12 orange-row">
+    <h3>About Us</h3>
+    <span>
+      <%= best_in_place @employer, :about, :as => :textarea, :class => "inline-button" %>
+    </span>
+    <ul class="employer-general-information">
+      <li>
+        <p>Address: <%= best_in_place @employer, :hq_address %>, <%= @number %>
+        <%= best_in_place @employer, :hq_city %>, <%= best_in_place @employer, :hq_state %>
+        </p>
+      </li>
+      <li>
+        <p>Industry: <%= best_in_place @employer, :industry %></p>
+      </li>
+      <li>
+        <p>Founded: <%= best_in_place @employer, :founded %></p>
+      </li>
+      <li>
+        <p>Company Size:<%= best_in_place @employer, :size %></p>
+      </li>
+      <li>
+        <ul class="menu">
+          <li><%= best_in_place @employer, :facebook %></li>
+          <li><%= best_in_place @employer, :twitter %></li>
+          <li><%= best_in_place @employer, :google %></li>
+          <li><%= best_in_place @employer, :youtube %></li>
+          <li><%= best_in_place @employer, :linkedin %></li>
+          <li><%= best_in_place @employer, :instagram %></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="columns large-8 small-12 red-row">
+    <h3 class="subheader">Active Job Listings</h3>
+    <% @jobs.each do |job| %>
+      <div class="row column">
+        <div class="row employer-job-row white-row">
+            <div class="column small-12">
+                <p><%= job.position %></p>
+            </div>
+
+            <div class="column small-12">
+                <p><%= job.description %></p>
+            </div>
+            <ul class="menu">
+              <li><%= button_to("Edit", edit_employer_job_path(@employer, job.id), :method => 'get', :class => 'button small button_spacing') %></li>
+              <li><%= button_to("View", employer_job_path(@employer, job.id), :method => 'get', :class => 'button small button_spacing') %></li>
+              <li><%= button_to("Delete", delete_employer_job_path(@employer, job.id), :method => 'get', :class => 'button alert small button_spacing') %></li>
+            </ul>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>

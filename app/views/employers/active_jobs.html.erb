@@ -1,0 +1,25 @@
+<h3 class="subheader">Active Job Listings</h3>
+<% @jobs.each do |job| %>
+  <div class="row sidebar job">
+      <div class="column small-12">
+          <p><%= job.position %></p>
+      </div>
+
+      <div class="column small-12">
+          <p><%= job.description %></p>
+      </div>
+      <div class="column small-12">
+        <ul class="menu">
+          <li><%= button_to("Edit", edit_employer_job_path(@employer, job.id), :method => 'get', :class => 'button small button_spacing button_dropshadow') %></li>
+          <li><%= button_to("View", employer_job_path(@employer, job.id), :method => 'get', :class => 'button small button_spacing button_dropshadow') %></li>
+          <li><%= button_to("Delete", delete_employer_job_path(@employer, job.id), :method => 'get', :class => 'button alert small button_spacing button_dropshadow') %></li>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+<div class="column small-centered small-6">
+  <p class="text-center">
+    <%= button_to("Create Job Listing", new_employer_job_path(@employer), :method => 'get', :class => 'button success button_dropshadow button-center') %>
+  </p>
+</div>

@@ -13,10 +13,21 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
+//= require best_in_place
+//= require jquery-ui
 //= require_tree .
 
 $(function(){
   $(document).foundation();
+  $('.best_in_place').best_in_place();
+  $('.best_in_place').on("ajax:success", function(){
+    $(this).closest('span').effect('highlight');
+  });
+  // tooltip doesnt work since its a span before it is a regular form field so i will need to figure out a better way to
+  // let users know they just need to click on the text to edit
+  $('.best_in_place').on('mouseenter', function() {
+    console.log('i hovered on an element');
+  });
 });
 
 

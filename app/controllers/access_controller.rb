@@ -27,11 +27,11 @@ class AccessController < ApplicationController
     if auth_user_acct
       session[:user_id] = auth_user_acct.id
       flash[:notice] = "You are now logged in as #{auth_user_acct.username}."
-      redirect_to(user_path(auth_user_acct.id))
+      redirect_to(edit_user_path(auth_user_acct.id))
     elsif auth_employer_acct
       session[:employer_id] = auth_employer_acct.id
       flash[:notice] = "You are now logged in as #{auth_employer_acct.username}."
-      redirect_to(employer_path(auth_employer_acct.id))
+      redirect_to(edit_employer_path(auth_employer_acct.id))
     else
       flash.now[:warning] = "Invalid username/password combination"
       render('login')

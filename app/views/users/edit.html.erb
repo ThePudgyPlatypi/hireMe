@@ -1,12 +1,35 @@
-<div class="row">
-  <h2 class="subheader text-center mainheader">Edit User</h2>
-  <%= form_for(@user) do |user| %>
-
-    <%= render(:partial => 'form', :locals => {:user => user}) %>
-
-    <div class="small-4 small-offset-2 columns end">
-      <%= user.submit("Update User", :class => "button button_dropshadow") %>
+<div id="user-page" class="row" data-equalizer>
+  <!-- user picture -->
+  <div id="user_picture_box" class="" data-equalizer-watch>
+    <div class="picture-info-box">
+      <h2 class="user-name"><%= @user.username %></h2>
+      <p><%= best_in_place @user, :email %></p>
     </div>
+    <%= image_tag(@user.avatar.url, :class => "cover-picture") %>
+    <%= form_for(@user) do |user| %>
+      <span class="user-picture-edit-field">
+        <%= user.file_field(:avatar, :accept => "image/png, image/gif, image/jpeg", :class => "button file-field-original") %>
+        <%= user.submit("Change Picture", :class => "button") %>
+      </span>
+    <% end %>
+    <div class="gradient-overlay"></div>
+  </div>
 
-  <% end %>
+  <!-- user resume -->
+  <div id="user_resume" class="slider-column-center" data-equalizer-watch>
+    <div class="user-container">
+      <h3 class="tab">Resume</h3>
+      <div id="real_resume">
+        <%= render :partial => "user_resume", :locals => {:user => @user} %>
+      </div>
+    </div>
+  </div>
+
+  <!-- user information -->
+  <div id="user_information" class="slider-column-right" data-equalizer-watch>
+    <div class="user-container">
+      <h3 class="tab">Information</h3>
+      <%= render :partial => "user_info_edit", :locals => {:user => @user} %>
+    </div>
+  </div>
 </div>

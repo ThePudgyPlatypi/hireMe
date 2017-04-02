@@ -8,9 +8,9 @@
   <li><%= link_to('jobs', jobs_path, :class=>"") %></li>
   <li>
     <% if session[:user_id] %>
-      <%= link_to('profile', user_path(session[:user_id]), :class=>"") %>
+      <%= link_to('profile', edit_user_path(session[:user_id]), :class=>"") %>
     <% elsif session[:employer_id] %>
-      <%= link_to('profile', employer_path(session[:employer_id]), :class=>"") %>
+      <%= link_to('profile', edit_employer_path(session[:employer_id]), :class=>"") %>
     <% else %>
       <%= link_to('sign up', access_signup_choice_path, :class => "") %>
     <% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170109044538) do
+ActiveRecord::Schema.define(version: 20170330015317) do
 
   create_table "employers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "company_name"
@@ -50,6 +50,8 @@ ActiveRecord::Schema.define(version: 20170109044538) do
     t.datetime "updated_at",      null: false
     t.string   "password_digest"
     t.string   "username"
+    t.string   "logo"
+    t.string   "header"
   end
 
   create_table "jobs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
@@ -70,6 +72,7 @@ ActiveRecord::Schema.define(version: 20170109044538) do
     t.text     "resume",     limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.string   "document"
     t.index ["job_id", "user_id"], name: "index_user_applications_on_job_id_and_user_id", using: :btree
   end
 
@@ -89,6 +92,7 @@ ActiveRecord::Schema.define(version: 20170109044538) do
     t.boolean  "admin",                         default: false
     t.string   "password_digest"
     t.string   "avatar"
+    t.string   "document"
   end
 
 end

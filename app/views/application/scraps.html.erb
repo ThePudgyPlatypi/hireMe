@@ -1,0 +1,16 @@
+<!-- a file for all scrap code that might come in handy later -->
+
+<!-- this was pulled from the edit.html.erb file, it is a simple form that is just like the new sign up -->
+<div class="row">
+  <h2 class="subheader text-center mainheader">Edit Employer</h2>
+  <%= form_for(@employer) do |employer| %>
+
+    <%= render(:partial => 'form', :locals => {:employer => employer}) %>
+    <div class="columns small-8 small-offset-2 end">
+      <%= employer.submit("Update Employer", :class => "button button_dropshadow") %>
+    </div>
+  <% end %>
+</div>
+
+
+<!-- the old edit form from the user page. Just a simple page with partials that go to the actual forms themselves -->

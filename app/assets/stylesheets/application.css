@@ -14,6 +14,7 @@
  *= require_self
  *= require foundation_and_overrides
  *= require font-awesome
+ *= require jquery-ui
 */
 
 
@@ -59,6 +60,16 @@ table {
   transform: translate(-50%, -50%);
 }
 
+.standard-background {
+  background-image: url("triangles-reflect.svg");
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-attachment: fixed;
+  background-size: 50%;
+  background-color: #f2f2f2;
+  height: 100%;
+}
+
 /*---------------------------------------------------------*/
 /*Multi purpose styling*/
 
@@ -92,6 +103,27 @@ table {
   transform: translateY(0%);
 }
 
+/*Different color rows*/
+.orange-row {
+  background-color: #ff8300;
+  padding: 50px;
+}
+
+.white-row {
+  background-color: white;
+  padding: 50px;
+  color: black;
+}
+
+.red-row {
+  background-color: #FC4A2A;
+  padding: 50px;
+}
+
+.box-shadow {
+  box-shadow: 0px 5px 15px rgba(130, 54, 0, 0.5);
+}
+
 /*extra styling for the user page dark orange rows used in multiple things*/
 /*also cancels the hover effect*/
 .user-dark-orange-row {
@@ -116,6 +148,37 @@ table {
 
 .orange-paragraph {
   color: #ff8300;
+}
+
+.cover-picture {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.picture-info-box {
+  position: absolute;
+  right: 50px;
+  z-index: 1;
+  text-align: right;
+  margin-top: 20px;
+}
+
+.file-field-original {
+  width: 60px;
+  height: 50px;
+  overflow: hidden;
+  box-sizing: border-box;
+  padding: 60px 0 0 0;
+  background-image: url("upload.png");
+  background-position: center center;
+  background-size: 40px;
+  background-repeat: no-repeat;
+}
+
+.file-field-overlay {
+
 }
 
 /*---------------------------------------------------------*/
@@ -156,7 +219,7 @@ table {
    box-shadow: 0px 5px 15px rgba(130, 54, 0, 0.5);
  }
 
- .button-red{
+ .button-red {
    background-color: #FC4A2A;
    box-shadow: 0px 5px 15px rgba(130, 54, 0, 0.5);
  }
@@ -179,6 +242,10 @@ table {
 
  .button_dropshadow {
 
+ }
+
+ .inline-button {
+   display: inline;
  }
 
    /*Button hover states*/
@@ -231,6 +298,10 @@ table {
 
 .search-field:hover {
   box-shadow: 0px 0px 5px rgba(130, 54, 0, 0.5);
+}
+
+label {
+  margin: 15px;
 }
 
 /*---------------------------------------------------------*/

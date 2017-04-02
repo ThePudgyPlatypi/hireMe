@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :confirm_logged_in, :except => [:new, :create]
+  before_action :confirm_logged_in, :except => [:new, :create, :show]
 
   def index
     @users = User.all.order(:username)
@@ -28,12 +28,13 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+    @apps = User.find(params[:id]).user_applications
   end
 
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      redirect_to(user_path(@user))
+      redirect_to(edit_user_path(@user))
       flash[:notice] = "User Updated Successfully"
     else
       render 'new'
@@ -79,6 +80,7 @@ class UsersController < ApplicationController
     :current_term,
     :graduation_date,
     :admin,
-    :avatar)
+    :avatar,
+    :document)
   end
 end

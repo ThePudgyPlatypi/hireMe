@@ -3,4 +3,5 @@ class User < ApplicationRecord
   has_many :user_applications
   has_many :jobs, :through => :user_applications
   mount_uploader :avatar, AvatarUploader
+  mount_uploader :document, DocumentUploader
 end

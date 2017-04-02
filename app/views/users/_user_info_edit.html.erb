@@ -1,0 +1,58 @@
+<div class="row">
+  <%= fa_icon "user", class: "fa-5x user-info-icon" %>
+  <h2 class="user-info-heading">About <%= @user.first_name %></h2>
+  <div class="small-20 column user-dark-orange-row">
+    <p>
+      <%= best_in_place @user, :about, :as => :textarea %>
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <%= fa_icon "graduation-cap", class: "fa-5x user-info-icon" %>
+  <h2 class="user-info-heading">Education</h2>
+  <div class="small-20 column user-dark-orange-row">
+    <p>
+      <%= best_in_place @user, :school %>
+    </p>
+    <p>
+      Major:
+      <%= best_in_place @user, :major %>
+    </p>
+    <p>
+      Current Term:
+      <%= best_in_place @user, :current_term %>
+    </p>
+    <p>
+      Graduation Date:
+      <%= best_in_place @user, :graduation_date %>
+    </p>
+  </div>
+</div>
+
+<!-- need to make this so that it only shows up when it is viewed by the user -->
+<div class="row">
+  <%= fa_icon "history", class: "fa-5x user-info-icon" %>
+  <h2 class="user-info-heading">Job Application History</h2>
+  <div class="small-20 column user-dark-orange-row">
+    <% @apps.each do |app| %>
+      <div class="row user-application">
+        <div class="column small-12">
+          <label class="bold">Position Applied for:</label>
+            <p><%= app.job.position %></p>
+        </div>
+
+        <div class="column small-8">
+          <label class="bold">When?</label>
+            <p><%= app.created_at %></p>
+
+        </div>
+        <div class="column small-20">
+          <ul class="menu">
+            <li><%= button_to("View Job", job_path(app.job_id), :method => 'get', :class => 'button button_dropshadow') %></li>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

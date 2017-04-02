@@ -27,12 +27,6 @@
   right: 65%;
 }
 
-.user_picture {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
 // moved to application.css
 // .gradient-overlay {
 //   position: relative;
@@ -52,11 +46,11 @@
   object-fit: cover;
 }
 
-.user-picture-info {
+.user-picture-edit-field {
   position: absolute;
-  right: 50px;
+  top: 0;
+  left: 0;
   z-index: 1;
-  text-align: right;
 }
 
 // --------------------------------------------------
@@ -111,4 +105,10 @@
   // bottom: 0;
   // left: 0;
   // right: 0;
+}
+
+.user-resume-edit-field {
+  margin-left: 30px;
+  margin-right: 30px;
+  display: inline-block;
 }

@@ -1,170 +1,78 @@
 <div class="row">
-  <h2 class="subheader mainheader">Employer <%= @employer.company_name %> Parameters</h2>
-  <div class="column small-8">
-    <table summary="Employer table" class="hover stack">
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Attribute</th>
-        <tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Company Name</td>
-          <td><%= @employer.company_name %></td>
-        </tr>
-        <tr>
-          <td>Industry</td>
-          <td><%= @employer.industry %></td>
-        </tr>
-        <tr>
-          <td>Date Founded</td>
-          <td><%= @employer.founded %></td>
-        </tr>
-        <tr>
-          <td>Company Size</td>
-          <td><%= @employer.size %></td>
-        </tr>
-        <tr>
-          <td>About <%= @employer.company_name %></td>
-          <td><%= @employer.about %></td>
-        </tr>
-        <tr>
-          <td>Contact Phone Number</td>
-          <td><%= @employer.contact_phone %></td>
-        </tr>
-        <tr>
-          <td>Email</td>
-          <td><%= @employer.contact_email %></td>
-        </tr>
-        <tr>
-          <td>Website</td>
-          <td><%= @employer.website %></td>
-        </tr>
-        <tr>
-          <td>HQ address</td>
-          <td>
-            <address>
-              <p>
-                <%= @employer.hq_address %>, <%= @number %><br />
-                <%= @employer.hq_city %>, <%= @employer.hq_state %><br />
-              </p>
-            </address>
-          </td>
-        </tr>
-        <tr>
-          <td>Local address</td>
-          <td>
-            <address>
-              <p>
-                <%= @employer.local_address %>, <%= @local_number %><br />
-                <%= @employer.local_city %>, <%= @employer.local_state %><br />
-              </p>
-            </address>
-          </td>
-        </tr>
-        <tr>
-          <td>Facebook</td>
-          <td>
-            <a href="http://<%= @employer.facebook %>">
-              <%= @employer.facebook %>
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td>Twitter</td>
-          <td>
-            <a href="http://<%= @employer.twitter %>">
-              <%= @employer.twitter %>
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td>Google+</td>
-          <td>
-            <a href="http://<%= @employer.google %>">
-              <%= @employer.google %>
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td>YouTube</td>
-          <td>
-            <a href="http://<%= @employer.youtube %>">
-              <%= @employer.youtube %>
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td>LinkedIn</td>
-          <td>
-            <a href="http://<%= @employer.linkedin %>">
-              <%= @employer.linkedin %>
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td>Instagram</td>
-          <td>
-            <a href="http://<%= @employer.instagram %>">
-              <%= @employer.instagram %>
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td>Profile Created</td>
-          <td>
-            <%= @employer.created_at %>
-          </td>
-        </tr>
-        <tr>
-          <td>Last Update</td>
-          <td>
-              <%= @employer.updated_at %>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="columns small-12 employer-image-header">
+    <!-- This will be a header image for the employer -->
+    <%= image_tag("building.jpg", :class => "cover-picture", :alt => "") %>
+    <div class="gradient-overlay"></div>
+  </div>
+  <div class="picture-info-box">
+    <%= image_tag("logo.png", :alt => "logo", :class => "employee-logo") %>
+    <h1 class="mainheader"><%= @employer.company_name %></h1>
+    <ul>
+      <li><%= link_to(@employer.contact_email) %></li>
+      <li><%= link_to(@employer.website) %></li>
+      <li><%= @employer.contact_phone %></li>
+    </ul>
+  </div>
+</div>
+
+<div class="row employer-profile">
+  <!-- <h2 class="subheader mainheader">Employer <%= @employer.company_name %> Parameters</h2> -->
+  <div class="columns large-8 small-12">
+    <h3>About Us</h3>
+    <%= @employer.about %>
   </div>
 
-  <div class="columns small-4">
-    <h3 class="subheader">Active Job Listings</h3>
+  <div class="columns large-4 small-12">
+    <ul class="employer-general-information">
+      <li>
+        <p>Industry: <%= @employer.industry %></p>
+      </li>
+      <li>
+        <p>Founded: <%= @employer.founded %></p>
+      </li>
+      <li>
+        <p>Company Size:<%= @employer.size %></p>
+      </li>
+      <li>
+        <p>Address: <%= @employer.hq_address %>, <%= @number %><br />
+        <%= @employer.hq_city %>, <%= @employer.hq_state %><br />
+        </p>
+      </li>
+      <li>
+        <%= @employer.facebook %>
+        <%= @employer.twitter %>
+        <%= @employer.google %>
+        <%= @employer.youtube %>
+        <%= @employer.linkedin %>
+        <%= @employer.instagram %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="row">
+  <div class="columns large-12 small-12">
+    <h3 class="subheader"><%= @employer.company_name %> Job Listings</h3>
     <% @jobs.each do |job| %>
-      <div class="row sidebar job">
-          <div class="column small-8">
-            <label class="bold">Job Position</label>
-              <p><%= job.position %></p>
-          </div>
+      <div class="row column" style="text-align: center;">
+        <div class="row job">
+            <div class="column small-12">
+                <p><%= job.position %></p>
+            </div>
 
-          <div class="column small-4">
-            <label class="bold">Salary</label>
-              <p><%= job.salary %></p>
-          </div>
-
-          <div class="column small-12">
-            <label class="bold">Description</label>
-              <p><%= job.description %></p>
-          </div>
-
-          <div class="column small-12">
-            <label class="bold">Hours</label>
-              <p><%= job.hours %></p>
-          </div>
-
-          <div class="column small-12">
+            <div class="column small-12">
+                <p><%= job.description %></p>
+            </div>
             <ul class="menu">
-              <li><%= button_to("Edit", edit_employer_job_path(@employer, job.id), :method => 'get', :class => 'button small button_spacing button_dropshadow') %></li>
-              <li><%= button_to("View", employer_job_path(@employer, job.id), :method => 'get', :class => 'button small button_spacing button_dropshadow') %></li>
-              <li><%= button_to("Delete", delete_employer_job_path(@employer, job.id), :method => 'get', :class => 'button alert small button_spacing button_dropshadow') %></li>
+              <li>
+                <%= button_to("Apply", new_job_user_application_path(job), :method => 'get', :class=>"button button-red-large") %>
+              </li>
+              <li>
+                <%= button_to("Details", job_path(job), :method => 'get', :class=>"button button_spacing") %>
+              </li>
             </ul>
-          </div>
         </div>
-      <% end %>
-
-    <div class="column small-centered small-6">
-      <p class="text-center">
-        <%= button_to("Create Job Listing", new_employer_job_path(@employer), :method => 'get', :class => 'button success button_dropshadow button-center') %>
-      </p>
-    </div>
+      </div>
+    <% end %>
   </div>
 </div>

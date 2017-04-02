@@ -1,11 +1,11 @@
 <div id="user-page" class="row" data-equalizer>
   <!-- user picture -->
   <div id="user_picture_box" class="" data-equalizer-watch>
-    <div class="user-picture-info">
+    <div class="picture-info-box">
       <h2 class="user-name"><%= @user.username %></h2>
       <p><%= @user.email %></p>
     </div>
-    <%= image_tag(@user.avatar.url, :class => "user_picture") %>
+    <%= image_tag(@user.avatar.url, :class => "cover-picture") %>
     <div class="gradient-overlay"></div>
   </div>
 
@@ -23,6 +23,7 @@
       <%= render :partial => "user_info", :locals => {:user => @user} %>
     </div>
   </div>
+
 </div>
 
 <div id="real_resume">

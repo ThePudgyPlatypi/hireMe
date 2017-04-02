@@ -18,6 +18,8 @@ gem 'coffee-rails', '~> 4.2'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
+# jquery-ui for all the fun stuff
+gem 'jquery-ui-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
@@ -33,6 +35,9 @@ gem 'foundation-rails'
 # Carrierwave for file uploading
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick'
+
+# inline form editing
+gem 'best_in_place', '~> 3.1'
 
 # Devise for easier user login and such
 # not using until later when i get more important features working

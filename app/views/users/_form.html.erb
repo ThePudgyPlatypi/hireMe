@@ -26,21 +26,10 @@
 </div>
 <!-- Email field and admin -->
 <div class="row">
-  <div class="small-4 small-offset-2 columns">
+  <div class="small-4 small-offset-2 columns end">
     <label>Email
       <%= user.text_field(:email) %>
     </label>
-  </div>
-  <div class="small-4 columns end">
-    <p>Admin</p>
-    <div class="switch">
-        <%= user.check_box(:admin, :class => "switch-input", :id => "admin") %>
-        <label class="switch-paddle" for="admin">
-          <span class="show-for-sr">Do you like me?</span>
-          <span class="switch-active" aria-hidden="true">Yes</span>
-          <span class="switch-inactive" aria-hidden="true">No</span>
-        </label>
-      </div>
   </div>
 </div>
 <!-- About field  -->
@@ -92,6 +81,14 @@
   <div class="small-4 small-offset-2 columns end">
     <label>User Image
       <%= user.file_field(:avatar) %>
+    </label>
+  </div>
+</div>
+
+<div class="row">
+  <div class="small-4 small-offset-2 columns end">
+    <label>User Resume
+      <%= user.file_field(:document) %>
     </label>
   </div>
 </div>
