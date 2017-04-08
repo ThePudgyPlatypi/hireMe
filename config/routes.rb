@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 
   # Nesting apps paths for index, new, create
   resources :jobs, only: [:index, :show] do
-    resources :user_applications, only: [:new, :create]
+    resources :user_applications, only: [:new, :create, :index, :show, :delete]
   end
 
   resources :users do

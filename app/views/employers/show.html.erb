@@ -17,45 +17,39 @@
 
 <div class="row employer-profile">
   <!-- <h2 class="subheader mainheader">Employer <%= @employer.company_name %> Parameters</h2> -->
-  <div class="columns large-8 small-12">
-    <h3>About Us</h3>
-    <%= @employer.about %>
+  <div class="columns large-4 small-12 orange-row">
+      <h3>About Us</h3>
+      <%= @employer.about %>
+      <ul class="employer-general-information">
+        <li>
+          <p>Industry: <%= @employer.industry %></p>
+        </li>
+        <li>
+          <p>Founded: <%= @employer.founded %></p>
+        </li>
+        <li>
+          <p>Company Size:<%= @employer.size %></p>
+        </li>
+        <li>
+          <p>Address: <%= @employer.hq_address %>, <%= @number %><br />
+          <%= @employer.hq_city %>, <%= @employer.hq_state %><br />
+          </p>
+        </li>
+        <li>
+          <%= @employer.facebook %>
+          <%= @employer.twitter %>
+          <%= @employer.google %>
+          <%= @employer.youtube %>
+          <%= @employer.linkedin %>
+          <%= @employer.instagram %>
+        </li>
+      </ul>
   </div>
-
-  <div class="columns large-4 small-12">
-    <ul class="employer-general-information">
-      <li>
-        <p>Industry: <%= @employer.industry %></p>
-      </li>
-      <li>
-        <p>Founded: <%= @employer.founded %></p>
-      </li>
-      <li>
-        <p>Company Size:<%= @employer.size %></p>
-      </li>
-      <li>
-        <p>Address: <%= @employer.hq_address %>, <%= @number %><br />
-        <%= @employer.hq_city %>, <%= @employer.hq_state %><br />
-        </p>
-      </li>
-      <li>
-        <%= @employer.facebook %>
-        <%= @employer.twitter %>
-        <%= @employer.google %>
-        <%= @employer.youtube %>
-        <%= @employer.linkedin %>
-        <%= @employer.instagram %>
-      </li>
-    </ul>
-  </div>
-</div>
-
-<div class="row">
-  <div class="columns large-12 small-12">
-    <h3 class="subheader"><%= @employer.company_name %> Job Listings</h3>
+  <div class="columns large-8 small-12 red-row">
+    <h3 class="subheader">Active Job Listings</h3>
     <% @jobs.each do |job| %>
       <div class="row column" style="text-align: center;">
-        <div class="row job">
+        <div class="row employer-job-row white-row">
             <div class="column small-12">
                 <p><%= job.position %></p>
             </div>

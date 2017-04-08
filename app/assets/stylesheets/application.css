@@ -52,6 +52,11 @@ table {
   padding: 20px;
 }
 
+.black-mainheader {
+  padding: 20px;
+  color: black;
+}
+
 .v-center-align {
   position: absolute;
   top: 45%;
@@ -68,6 +73,14 @@ table {
   background-size: 50%;
   background-color: #f2f2f2;
   height: 100%;
+}
+
+.white-text {
+  color: white;
+}
+
+.black-text {
+  color: black;
 }
 
 /*---------------------------------------------------------*/
@@ -124,6 +137,16 @@ table {
   box-shadow: 0px 5px 15px rgba(130, 54, 0, 0.5);
 }
 
+.small-red-circle {
+  background-color: #FC4A2A;
+  border-radius: 100%;
+  display: inline-block;
+  color: white;
+}
+
+.small-red-circle p {
+  margin: 0 8px 0 8px;
+}
 /*extra styling for the user page dark orange rows used in multiple things*/
 /*also cancels the hover effect*/
 .user-dark-orange-row {
@@ -131,19 +154,6 @@ table {
   margin-bottom: 20px;
   padding: 30px;
   box-shadow: 0px 5px 15px rgba(130, 54, 0, 0.5);
-}
-
-/*this creates the tab look for user page and any where else this gets used*/
-.tab {
-  display: inline-block;
-  text-align: right;
-  width: 200px;
-  position: absolute;
-  transform: matrix(0, -1, 1, 0, -220, 10);
-  transform-origin: right 0;
-  background-color: inherit;
-  color: inherit;
-  padding-right: 10px;
 }
 
 .orange-paragraph {
@@ -214,6 +224,10 @@ table {
    box-shadow: 0px 5px 15px rgba(130, 54, 0, 0.5);
  }
 
+ .button-margin {
+   margin: 20px 0 20px 0;
+ }
+
  .button-large {
    background-color: #ff8300;
    box-shadow: 0px 5px 15px rgba(130, 54, 0, 0.5);
@@ -230,6 +244,12 @@ table {
    width: 200px;
  }
 
+ .button-white {
+   background-color: #fff;
+   box-shadow: 0px 5px 15px rgba(130, 54, 0, 0.5);
+   color: black;
+ }
+
  .button-center {
    display: block;
    margin-left: auto;
@@ -237,11 +257,8 @@ table {
  }
 
  .button_spacing {
-   margin: 0 10px 0 10px;
- }
-
- .button_dropshadow {
-
+   margin-left: 10px;
+   margin-right: 10px;
  }
 
  .inline-button {

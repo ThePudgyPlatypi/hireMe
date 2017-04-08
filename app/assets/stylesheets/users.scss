@@ -13,8 +13,30 @@
   padding-left: 40px;
 }
 
+.user-row {
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+
 #user_resume, #user_information {
   box-shadow: 0px 5px 15px rgba(130, 54, 0, 0.7);
+}
+
+/*this creates the tab look for user page and any where else this gets used*/
+.tab {
+  display: inline-block;
+  text-align: right;
+  width: 200px;
+  position: absolute;
+  transform: matrix(0, -1, 1, 0, -260, 10);
+  transform-origin: right 0;
+  background-color: inherit;
+  color: inherit;
+  padding-right: 10px;
+}
+
+.tab-below {
+  margin-top: 600px;
 }
 
 // --------------------------------------------------
@@ -48,8 +70,8 @@
 
 .user-picture-edit-field {
   position: absolute;
-  top: 0;
-  left: 0;
+  bottom: 1.5%;
+  left: 2%;
   z-index: 1;
 }
 

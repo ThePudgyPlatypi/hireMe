@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   before_action :confirm_logged_in, :except => [:new, :create, :show]
 
   def index

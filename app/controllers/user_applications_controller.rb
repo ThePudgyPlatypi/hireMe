@@ -1,6 +1,11 @@
 class UserApplicationsController < ApplicationController
-  before_action :confirm_logged_in
+  # Come back to this. I don't want to allow public access to job applications
+  # Need to figure out how to have both the employer and user have access
+  before_action :confirm_logged_in, :except => [:index, :show]
+
+
   def index
+    @apps = Job.find(params[:job_id]).user_applications
   end
 
   def show
