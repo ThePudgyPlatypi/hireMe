@@ -1,20 +1,20 @@
 <div class="row">
-  <h2 class="subheader text-center mainheader">Create New User</h2>
-  <% if !@user.errors.empty? %>
-    <div class="alert callout" data-closable>
-      <ul>
-        <% @user.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <%= form_for(@user, html: { multipart: true }) do |user| %>
+  <div class="columns small-12" id="user-form-wrapper">
+    <h2 class="subheader text-center mainheader">Create New User</h2>
+    <% if !@user.errors.empty? %>
+      <div class="alert callout" data-closable>
+        <ul>
+          <% @user.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <%= form_for(@user, html: { :name => "userFormElem", :id => "userFormElem", multipart: true}) do |user| %>
 
-    <%= render(:partial => 'form', :locals => {:user => user}) %>
+      <%= render(:partial => 'form', :locals => {:user => user}) %>
 
-    <div class="columns small-offset-2 small-8 end">
-      <%= user.submit("Create Account", :class => "button") %>
-    </div>
-  <% end %>
+      
+    <% end %>
+  </div>
 </div>
