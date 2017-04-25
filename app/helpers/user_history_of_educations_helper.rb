@@ -1,0 +1,2 @@
+module UserHistoryOfEducationsHelper
+end

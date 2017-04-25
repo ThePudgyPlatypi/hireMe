@@ -1,13 +1,20 @@
 <div class="row">
   <%= app.hidden_field(:job_id, :value => params[:job_id]) %>
   <%= app.hidden_field(:user_id, :value => session[:user_id]) %>
-  <div class="small-4 small-offset-2 columns">
-    <label class="bold">Name</label>
+  <div class="small-8 small-offset-2 columns white-row box-shadow add-vertical-margin end">
+    <label class="bold black-text">Name</label>
       <%= app.text_field(:name) %>
-  </div>
-
-  <div class="small-4 columns end">
-    <label class="bold">Resume</label>
+    <label class="bold black-text">Address</label>
+      <%= app.text_field(:address) %>
+    <label class="bold black-text">City</label>
+      <%= app.text_field(:city) %>
+    <label class="bold black-text">Resume</label>
       <%= app.file_field(:document) %>
+
+    <label class="bold black-text">Add Job History</label>
+    <%= app.user_application_job_historys.text_field(:job_title) %>
+
+    <%= app.submit("Apply", :class => "button button_dropshadow") %>
+
   </div>
 </div>

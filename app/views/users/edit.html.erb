@@ -18,17 +18,13 @@
   <!-- user resume -->
   <div id="user_resume" class="slider-column-center" data-equalizer-watch>
     <div class="user-container">
-      <h3 class="tab">Resume</h3>
-      <div id="real_resume">
-        <%= render :partial => "user_resume", :locals => {:user => @user} %>
-      </div>
+      <%= render :partial => "user_resume", :locals => {:user => @user, :education => @education} %>
     </div>
   </div>
 
   <!-- user information -->
   <div id="user_information" class="slider-column-right" data-equalizer-watch>
     <div class="user-container">
-      
       <!-- <h3 class="tab tab-below">Education</h3>
       <h3 class="tab tab-below">Application History</h3> -->
       <%= render :partial => "user_info_edit", :locals => {:user => @user} %>

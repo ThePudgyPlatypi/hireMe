@@ -12,13 +12,13 @@
           <%= button_to("filter", "", :class=>"button button_spacing search-button") %>
         </li>
       </ul>
-    </div>  
+    </div>
 
     <% @jobs.each do |job| %>
       <div class="row column" style="text-align: center;">
         <div class="row job orange-row box-shadow">
           <div class="column small-3 pic-col">
-            <img src="http://placehold.it/250x250">
+            <%= image_tag(job.employer.logo, :alt => "Employer Logo", :class => "employee-logo") %>
              <!-- render(:partial => 'view', :locals => {:job => job}) %> -->
            </div>
 

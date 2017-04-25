@@ -1,7 +1,7 @@
 <div class="row">
   <h3 class="tab">Information</h3>
   <%= fa_icon "user", class: "fa-5x user-info-icon" %>
-  <div class="small-20 column white-row user-row">
+  <div class="small-12 column white-row user-row">
     <h2 class="black-text">About Me</h2>
     <p>
       <%= best_in_place @user, :about, :as => :textarea %>
@@ -17,7 +17,7 @@
   <h3 class="tab">Education</h3>
   <%= fa_icon "graduation-cap", class: "fa-5x user-info-icon" %>
   <!-- <h2 class="user-info-heading"></h2> -->
-  <div class="small-20 column red-row user-row">
+  <div class="small-12 column red-row user-row">
     <p>
       <%= best_in_place @user, :school %>
     </p>

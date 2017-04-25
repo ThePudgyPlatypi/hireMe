@@ -27,7 +27,8 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    @apps = User.find(params[:id]).user_applications
+    @apps = User.find(@user).user_applications
+    @education = User.find(@user).user_history_of_educations
   end
 
   def update

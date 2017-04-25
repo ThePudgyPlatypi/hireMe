@@ -1,2 +1,17 @@
-<h1>Apps#index</h1>
-<p>Find me in app/views/apps/index.html.erb</p>
+<div class="row">
+  <div class="column small-12 red-row box-shadow text-center">
+    <h1>Applications for <%= @job.position %></h1>
+  </div>
+</div>
+<div class="row">
+  <% @apps.each do |app| %>
+    <div class="column small-8 small-offset-2 end white-row box-shadow add-vertical-margin">
+      <h2 class="black-text">Applicant Information</h2>
+      <ul class="remove-list-styling">
+        <li>Name: <%= app.name %></li>
+        <li><%= app.resume %></li>
+        <%= link_to("Download Resume", app.document_url, :class => "black-text") %>
+      </ul>
+    </div>
+  <% end %>
+</div>

@@ -1,20 +1,24 @@
+<% if !@user.errors.empty? %>
+  <div class="alert callout" data-closable>
+    <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <div class="row">
-  <div class="columns small-12" id="user-form-wrapper">
+  <div class="column small-12 red-row box-shadow text-center">
     <h2 class="subheader text-center mainheader">Create New User</h2>
-    <% if !@user.errors.empty? %>
-      <div class="alert callout" data-closable>
-        <ul>
-          <% @user.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column small-8 small-offset-2">
     <%= form_for(@user, html: { :name => "userFormElem", :id => "userFormElem", multipart: true}) do |user| %>
-
       <%= render(:partial => 'form', :locals => {:user => user}) %>
-
-      
+      <%= user.submit("Submit", :class => "button button_dropshadow") %>
     <% end %>
   </div>
 </div>

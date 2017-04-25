@@ -1,7 +1,12 @@
-<%= link_to("Download Resume", @user.document_url) %>
-<%= form_for(@user) do |user| %>
-  <span class="user-resume-edit-field">
-    <%= user.file_field(:document, :accept => "application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document", :class => "button file-field-original") %>
-    <%= user.submit("Change Resume", :class => "button") %>
-  </span>
-<% end %>
+<div class="row">
+  <h3 class="tab">Resume</h3>
+  <%= link_to("Download Resume", @user.document_url) %>
+  <%= form_for(@user) do |user| %>
+    <span class="user-resume-edit-field">
+      <%= user.file_field(:document, :accept => "application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document", :class => "button file-field-original") %>
+      <%= user.submit("Change Resume", :class => "button") %>
+    </span>
+  <% end %>
+  <%= @education.school %>
+
+</div>

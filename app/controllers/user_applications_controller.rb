@@ -5,7 +5,8 @@ class UserApplicationsController < ApplicationController
 
 
   def index
-    @apps = Job.find(params[:job_id]).user_applications
+    @job = Job.find(params[:job_id])
+    @apps = Job.find(params[:job_id]).user_applications.all.order(:created_at)
   end
 
   def show

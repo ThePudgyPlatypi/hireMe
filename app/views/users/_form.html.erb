@@ -1,40 +1,44 @@
 <!-- First and last name  -->
-<div class="row" id="user-signup-steps">
-  <ul id="progressbar">
-    <li class="active">Step 1</li>
-    <li class="active">Step 2</li>
-    <li class="active">Step 3</li>
-  </ul>
+<fieldset class="step">
+  <div class="row add-vertical-margin" id="user-signup-steps">
+    <h3>General Information</h3>
+    <div class="column small-6">
+      <label>First Name
+        <%= user.text_field(:first_name, :placeholder => "Limit 50 Characters") %>
+      </label>
+    </div>
 
-  <fieldset classx="step">
-    <label>First Name
-      <%= user.text_field(:first_name, :placeholder => "Limit 50 Characters") %>
-    </label>
+    <div class="column small-6">
+      <label>Last Name
+        <%= user.text_field(:last_name, :placeholder => "Limit 50 Characters") %>
+      </label>
+    </div>
+  </div>
 
-    <label>Last Name
-      <%= user.text_field(:last_name, :placeholder => "Limit 50 Characters") %>
-    </label>
+  <div class="row add-vertical-margin">
+    <div class="column small-4">
+      <!-- username and password  -->
+      <label>User Name
+        <%= user.text_field(:username, :placeholder => "Limit 50 Characters") %>
+      </label>
+    </div>
+    <div class="column small-4">
+      <label>Password
+        <%= user.password_field(:password) %>
+      </label>
+    </div>
+    <div class="column small-4">
+      <!-- Email field and admin -->
+      <label>Email
+        <%= user.text_field(:email) %>
+      </label>
+    </div>
+  </div>
+</fieldset>
 
-    <!-- username and password  -->
-    <label>User Name
-      <%= user.text_field(:username, :placeholder => "Limit 50 Characters") %>
-    </label>
-
-
-    <label>Password
-      <%= user.password_field(:password) %>
-    </label>
-
-    <!-- Email field and admin -->
-
-    <label>Email
-      <%= user.text_field(:email) %>
-    </label>
-    <!-- next button -->
-    <%= button_to("Next", :name => "next", :class => "next action-button") %>
-  </fieldset>
-
-  <fieldset class="step">
+<fieldset class="step">
+  <div class="row add-vertical-margin">
+    <h3>Tell Us About Yourself</h3>
     <!-- About field  -->
     <label>About Me
       <%= user.text_area(:about, :placeholder => "limit 2500 characters", :rows => 8) %>
@@ -44,36 +48,36 @@
     <label>My Story
       <%= user.text_area(:story, :placeholder => "limit 2500 characters", :rows => 8) %>
     </label>
-    <!-- next button -->
-    <%= button_to("Next", :name => "next", :class => "next action-button") %>
-    <!-- previous button -->
-    <%= button_to("Previous", :name => "previous", :class => "previous action-button") %>
-  </fieldset>
+  </div>
+</fieldset>
 
-  <fieldset class="step">
+<fieldset class="step">
+  <div class="row add-vertical-margin">
     <!-- School name -->
-
-    <label>School
-      <%= user.text_field(:school) %>
-    </label>
-    <!-- Major, term, and grad date -->
-
-    <label>Major
-      <%= user.text_field(:major) %>
-    </label>
-
-    <label>Current Term
-      <%= user.text_field(:current_term) %>
-    </label>
-
-    <label>Expected Graduation Date
-      <%= user.date_field(:graduation_date) %>
-    </label>
-    <!-- next button -->
-    <%= button_to("Next", :name => "next", :class => "next action-button") %>
-    <!-- previous button -->
-    <%= button_to("Previous", :name => "previous", :class => "previous action-button") %>
-  </fieldset>
+    <%= user.fields_for :user_history_of_educations, UserHistoryOfEducation.new do |edu| %>
+      <div class="column small-4">
+        <label>School name
+          <%= edu.text_field(:school) %>
+        </label>
+      </div>
+      <div class="column small-4">
+        <label>Major
+          <%= edu.text_field(:major) %>
+        </label>
+      </div>
+      <div class="column small-4">
+        <div class="switch">
+          <%= radio_button_tag "Currently Attending?", :currently_attending, :class => "switch-input" %>
+            <label class="switch-paddle" for="admin">
+              <span class="show-for-sr">Do you like me?</span>
+              <span class="switch-active" aria-hidden="true">Yes</span>
+              <span class="switch-inactive" aria-hidden="true">No</span>
+            </label>
+          </div>
+      </div>
+    <% end %>
+  </div>
+</fieldset>
 
   <fieldset class="step">
     <label>User Image
@@ -83,9 +87,4 @@
     <label>User Resume
       <%= user.file_field(:document) %>
     </label>
-    <!-- next button -->
-    <%= user.submit("Create Account", :class => "action-button submit button") %>
-    <!-- previous button -->
-    <%= button_to("Previous", :name => "previous", :class => "previous action-button") %>
-  </fieldset>
-</div>
+</fieldset>

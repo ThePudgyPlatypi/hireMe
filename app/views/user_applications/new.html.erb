@@ -1,10 +1,12 @@
-<div class="row">
-  <h2 class="subheader text-center mainheader">Apply for job <%= @job.position %></h2>
+  <div class="row">
+    <div class="column small-12 red-row box-shadow text-center">
+      <h2 class="subheader text-center mainheader">Apply for <%= @job.position %> at <%= @job.employer.company_name %></h2>
+    </div>
+  </div>
+
   <%= form_for [@job, @app] do |app| %>
 
     <%= render(:partial => 'form', :locals => {:app => app}) %>
-    <div class="columns small-4 small-offset-2 end">
-      <%= app.submit("Apply", :class => "button button_dropshadow") %>
-    </div>
+
   <% end %>
 </div>

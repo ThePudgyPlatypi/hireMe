@@ -28,20 +28,6 @@ $(function(){
   $('.best_in_place').on('mouseenter', function() {
     console.log('i hovered on an element');
   });
-
-  // Below here is where I will be putting code for the slider form fields
-
-  // variables for collectiong the fieldsets
-  var current_fs, next_fs, previous_fs;
-  // fieldsets that will be animated
-  var left, opacity, scale;
-  // place holder to keep things from glitching
-  var animating;
-
-  $(".next").click(function() {
-    if(animating) return false;
-    animating = true;
-  });
 });
 
 

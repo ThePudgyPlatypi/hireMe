@@ -137,6 +137,15 @@ table {
   box-shadow: 0px 5px 15px rgba(130, 54, 0, 0.5);
 }
 
+.add-vertical-margin {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.remove-list-styling {
+  list-style: none;
+}
+
 .small-red-circle {
   background-color: #FC4A2A;
   border-radius: 100%;
@@ -147,18 +156,19 @@ table {
 .small-red-circle p {
   margin: 0 8px 0 8px;
 }
+
 /*extra styling for the user page dark orange rows used in multiple things*/
 /*also cancels the hover effect*/
-.user-dark-orange-row {
+/*.user-dark-orange-row {
   background-color: rgb(229, 117, 0);
   margin-bottom: 20px;
   padding: 30px;
   box-shadow: 0px 5px 15px rgba(130, 54, 0, 0.5);
-}
+}*/
 
-.orange-paragraph {
+/*.orange-paragraph {
   color: #ff8300;
-}
+}*/
 
 .cover-picture {
   height: 100%;
@@ -392,6 +402,10 @@ label {
 .slider-column-center:hover + .slider-column-right > .user-container {
 
 }
+
+/*-----------------------------------------------------------*/
+/*Slider styling*/
+
 
 /*---------------------------------------------------------*/
  /*FOOTER STYLING*/
