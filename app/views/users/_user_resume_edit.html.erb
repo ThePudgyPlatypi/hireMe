@@ -1,11 +1,64 @@
+
+<div class="row">
+  <h3 class="tab">Skills</h3>
+  <%= fa_icon "star", class: "fa-5x user-info-icon" %>
+  <div class="small-12 column red-row user-row">
+  </div>
+</div>
+
+<div class="row">
+  <h3 class="tab">Employment</h3>
+  <%= fa_icon "briefcase", class: "fa-5x user-info-icon" %>
+  <div class="small-12 column red-row user-row">
+    <% @employment.each do |emp| %>
+      <div class="row white-text">
+        <div class="column small-4">
+          <strong>Company:</strong>
+          <p><%= emp.employer %></p>
+        </div>
+        <div class="column small-4">
+          <strong>Start date:</strong>
+          <p><%= emp.start_date %></p>
+        </div>
+        <div class="column small-4">
+          <% if !emp.current_employer? %>
+            <strong>Currently employed:</strong>
+            <p>yes</p>
+          <% else %>
+            <strong>End Date:</strong>
+            <p><%= emp.end_date %></p>
+          <% end %>
+        </div>
+      </div>
+      <div class="row white-text">
+        <div class="column small-4">
+          <strong>Title:</strong>
+          <p><%= emp.job_title %></p>
+        </div>
+        <div class="column small-4">
+          <strong>Job Responsibilities and Duties</strong>
+          <p><%= emp.job_description %></p>
+        </div>
+        <div class="column small-4">
+          <strong>Contact Number</strong>
+          <p><%= emp.contact_number %></p>
+        </div>
+      </div>
+    <% end %>
+    <%= button_to("Edit Employment", edit_user_user_history_of_employment_path(@employment), :method => "get", :class => "button button_dropshadow") %>
+  </div>
+</div>
+
 <div class="row">
   <h3 class="tab">Resume</h3>
-  <%= link_to("Download Resume", @user.document_url) %>
-  <%= form_for(@user) do |user| %>
-    <span class="user-resume-edit-field">
-      <%= user.file_field(:document, :accept => "application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document", :class => "button file-field-original") %>
-      <%= user.submit("Change Resume", :class => "button") %>
-    </span>
-  <% end %>
-
+  <%= fa_icon "file", class: "fa-5x user-info-icon" %>
+  <div class="small-12 column red-row user-row white-text">
+    <%= button_to("Download Resume", @user.document_url, :method => "get", :class => "button button_dropshadow add-vertical-margin") %>
+    <%= form_for(@user) do |user| %>
+      <span class="user-resume-edit-field add-vertical-margin">
+        <%= user.file_field(:document, :accept => "application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document") %>
+        <%= user.submit("Change Resume", :class => "button") %>
+      </span>
+    <% end %>
+  </div>
 </div>

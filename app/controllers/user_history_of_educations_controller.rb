@@ -1,17 +1,5 @@
 class UserHistoryOfEducationsController < ApplicationController
-  def new
-    # @user = User.find(params[:user_id])
-    # @education = UserHistoryOfEducationsController.new
-  end
-
-  def create
-    # @user = User.find(params[:user_id])
-    # @education = UserHistoryOfEducationsController.new(education_params)
-    # if @education.save
-    #   flash[:notice] = "Education Added. Add more if needed."
-    # else
-    #   render 'new'
-    # end
+  def edit
   end
 
   def update
@@ -25,9 +13,6 @@ class UserHistoryOfEducationsController < ApplicationController
   end
 
   def delete
-  end
-
-  def show
   end
 
   private

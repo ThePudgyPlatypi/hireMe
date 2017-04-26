@@ -7,7 +7,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @apps = User.find(params[:id]).user_applications
+    @apps = @user.user_applications
+    @education = @user.user_history_of_educations
+    @employment = @user.user_history_of_employments
   end
 
   def new
@@ -18,7 +20,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to(user_path(@user))
+      redirect_to(edit_user_path(@user))
       flash[:notice] = "User Created Successfully"
     else
       render 'new'
@@ -27,8 +29,9 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    @apps = User.find(params[:id]).user_applications
-    @education = User.find(params[:id]).user_history_of_educations
+    @apps = @user.user_applications
+    @education = @user.user_history_of_educations
+    @employment = @user.user_history_of_employments
   end
 
   def update
@@ -85,6 +88,21 @@ class UsersController < ApplicationController
     :admin,
     :avatar,
     :document,
-    user_history_of_educations_attributes:[:school, :major, :gpa, :current_term, :graduation_date, :currently_attending, :_destroy])
+    user_history_of_educations_attributes: [
+      :school,
+      :major,
+      :gpa,
+      :degree,
+      :graduation_date,
+      :currently_attending,
+      :_destroy],
+    user_history_of_employments_attributes: [
+      :start_date,
+      :end_date,
+      :employer,
+      :current_employer,
+      :job_title,
+      :contact_number,
+      :job_description])
   end
 end

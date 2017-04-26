@@ -11,9 +11,6 @@
     <label class="bold black-text">Resume</label>
       <%= app.file_field(:document) %>
 
-    <label class="bold black-text">Add Job History</label>
-    <%= app.user_application_job_historys.text_field(:job_title) %>
-
     <%= app.submit("Apply", :class => "button button_dropshadow") %>
 
   </div>
