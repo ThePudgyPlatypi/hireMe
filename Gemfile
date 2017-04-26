@@ -39,6 +39,9 @@ gem 'mini_magick'
 # inline form editing
 gem 'best_in_place', '~> 3.1'
 
+# adding in dynamic nested forms
+gem 'nested_form_fields'
+
 # Devise for easier user login and such
 # not using until later when i get more important features working
 # gem 'devise', '~> 4.2'

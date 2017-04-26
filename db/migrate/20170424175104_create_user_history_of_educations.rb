@@ -10,6 +10,6 @@ class CreateUserHistoryOfEducations < ActiveRecord::Migration[5.0]
       t.boolean "currently_attending"
       t.timestamps
     end
-    add_index('user_history_of_employments', ['user_id'])
+    add_index('user_history_of_educations', ['user_id'])
   end
 end

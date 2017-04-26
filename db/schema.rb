@@ -65,19 +65,6 @@ ActiveRecord::Schema.define(version: 20170424175104) do
     t.index ["employer_id"], name: "index_jobs_on_employer_id", using: :btree
   end
 
-  create_table "user_application_job_histories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.integer  "user_application_id"
-    t.date     "start_date"
-    t.date     "end_date"
-    t.boolean  "current_employer"
-    t.string   "job_title"
-    t.string   "contact_number"
-    t.text     "job_description",     limit: 65535
-    t.string   "employer"
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
-  end
-
   create_table "user_applications", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "job_id"
     t.integer  "user_id"
@@ -105,20 +92,7 @@ ActiveRecord::Schema.define(version: 20170424175104) do
     t.boolean  "currently_attending"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
-  end
-
-  create_table "user_history_of_employments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
-    t.integer  "user_id"
-    t.date     "start_date"
-    t.date     "end_date"
-    t.boolean  "current_employer"
-    t.string   "job_title"
-    t.string   "contact_number"
-    t.text     "job_description",  limit: 65535
-    t.string   "employer"
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.index ["user_id"], name: "index_user_history_of_employments_on_user_id", using: :btree
+    t.index ["user_id"], name: "index_user_history_of_educations_on_user_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|

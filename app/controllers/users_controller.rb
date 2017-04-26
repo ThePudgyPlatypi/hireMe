@@ -27,17 +27,20 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    @apps = User.find(@user).user_applications
-    @education = User.find(@user).user_history_of_educations
+    @apps = User.find(params[:id]).user_applications
+    @education = User.find(params[:id]).user_history_of_educations
   end
 
   def update
     @user = User.find(params[:id])
-    if @user.update_attributes(user_params)
-      redirect_to(edit_user_path(@user))
-      flash[:notice] = "User Updated Successfully"
-    else
-      render 'new'
+    respond_to do |format|
+      if @user.update_attributes(user_params)
+        format.html { redirect_to(edit_user_path(@user), :notice => 'User profile updated successfully.') }
+        format.json { respond_with_bip(@employer) }
+      else
+        format.html { render :action => "edit" }
+        format.json { respond_with_bip(@user) }
+      end
     end
   end
 
@@ -81,6 +84,7 @@ class UsersController < ApplicationController
     :graduation_date,
     :admin,
     :avatar,
-    :document)
+    :document,
+    user_history_of_educations_attributes:[:school, :major, :gpa, :current_term, :graduation_date, :currently_attending, :_destroy])
   end
 end

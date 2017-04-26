@@ -18,7 +18,7 @@
   <!-- user resume -->
   <div id="user_resume" class="slider-column-center" data-equalizer-watch>
     <div class="user-container">
-      <%= render :partial => "user_resume", :locals => {:user => @user, :education => @education} %>
+      <%= render :partial => "user_resume_edit", :locals => {:user => @user, :education => @education} %>
     </div>
   </div>
 
@@ -27,7 +27,7 @@
     <div class="user-container">
       <!-- <h3 class="tab tab-below">Education</h3>
       <h3 class="tab tab-below">Application History</h3> -->
-      <%= render :partial => "user_info_edit", :locals => {:user => @user} %>
+      <%= render :partial => "user_info_edit", :locals => {:user => @user, :education => @education, :apps => @apps} %>
     </div>
   </div>
 </div>

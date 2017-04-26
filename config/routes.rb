@@ -20,19 +20,19 @@ Rails.application.routes.draw do
   end
 
   # Nesting apps paths for index, new, create
-  resources :jobs, only: [:index, :show], shallow: true do
-    resources :user_applications, only: [:new, :create, :index, :show, :delete], shallow: true do
+  resources :jobs, only: [:index, :show] do
+    resources :user_applications, only: [:new, :create, :index, :show, :delete] do
     end
   end
 
-  resources :users, shallow: true do
+  resources :users do
     member do
       get :delete
     end
-
-    resources :user_applications, shallow: true, only: [:index, :show]
-    resources :user_history_of_employments, shallow: true, only: [:new, :create, :delete, :show]
-    resources :user_history_of_educations, shallow: true, only: [:new, :create, :delete, :show]
+    resources :user_applications, only: [:index, :show] do
+    end
+    resources :user_history_of_employments
+    resources :user_history_of_educations, only: [:edit]
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

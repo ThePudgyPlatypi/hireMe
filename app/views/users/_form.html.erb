@@ -51,40 +51,54 @@
   </div>
 </fieldset>
 
-<fieldset class="step">
-  <div class="row add-vertical-margin">
-    <!-- School name -->
-    <%= user.fields_for :user_history_of_educations, UserHistoryOfEducation.new do |edu| %>
-      <div class="column small-4">
-        <label>School name
-          <%= edu.text_field(:school) %>
-        </label>
+
+  <!-- School name -->
+  <fieldset class="step">
+    <h3>Education</h3>
+    <%= user.nested_fields_for :user_history_of_educations, UserHistoryOfEducation.new do |edu| %>
+      <div class="row add-vertical-margin">
+        <div class="column small-3">
+          <label>School name
+            <%= edu.text_field(:school) %>
+          </label>
+        </div>
+        <div class="column small-3">
+          <label>Major
+            <%= edu.text_field(:major) %>
+          </label>
+        </div>
+        <div class="column small-3">
+          <label>GPA
+            <%= edu.text_field(:gpa) %>
+          </label>
+        </div>
+        <div class="column small-3">
+          <label>Graduation Date
+            <%= edu.date_field(:graduation_date) %>
+          </label>
+        </div>
       </div>
-      <div class="column small-4">
-        <label>Major
-          <%= edu.text_field(:major) %>
-        </label>
-      </div>
-      <div class="column small-4">
-        <div class="switch">
-          <%= radio_button_tag "Currently Attending?", :currently_attending, :class => "switch-input" %>
-            <label class="switch-paddle" for="admin">
-              <span class="show-for-sr">Do you like me?</span>
-              <span class="switch-active" aria-hidden="true">Yes</span>
-              <span class="switch-inactive" aria-hidden="true">No</span>
-            </label>
-          </div>
-      </div>
+      <%= fa_icon "minus-circle", class: "" %>
+      <%= edu.remove_nested_fields_link "Remove School" %>
+
     <% end %>
-  </div>
-</fieldset>
+  </fieldset>
+  <!-- this is the "add another education" link -->
+  <%= fa_icon "plus-circle", class: "" %>
+  <%= user.add_nested_fields_link :user_history_of_educations, "Add Another School" %>
+
 
   <fieldset class="step">
-    <label>User Image
-      <%= user.file_field(:avatar) %>
-    </label>
+    <h3 class="add-vertical-margin">Media</h3>
+    <div class="row red-row column small-12 add-vertical-margin box-shadow">
+      <label>User Image
+        <%= user.file_field(:avatar) %>
+      </label>
+    </div>
 
-    <label>User Resume
-      <%= user.file_field(:document) %>
-    </label>
+    <div class="row red-row column small-12 add-vertical-margin box-shadow">
+      <label>User Resume
+        <%= user.file_field(:document) %>
+      </label>
+    </div>
 </fieldset>

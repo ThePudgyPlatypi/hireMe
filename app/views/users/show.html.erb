@@ -12,14 +12,13 @@
   <!-- user resume -->
   <div id="user_resume" class="slider-column-center" data-equalizer-watch>
     <div class="user-container">
-      <h3 class="tab">Resume</h3>
+      <%= render :partial => "user_resume", :locals => {:user => @user} %>
     </div>
   </div>
 
   <!-- user information -->
   <div id="user_information" class="slider-column-right" data-equalizer-watch>
     <div class="user-container">
-      <h3 class="tab">Information</h3>
       <%= render :partial => "user_info", :locals => {:user => @user} %>
     </div>
   </div>

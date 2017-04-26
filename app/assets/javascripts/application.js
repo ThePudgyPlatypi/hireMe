@@ -15,6 +15,7 @@
 //= require foundation
 //= require best_in_place
 //= require jquery-ui
+//= require nested_form_fields
 //= require_tree .
 
 $(function(){
