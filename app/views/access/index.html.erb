@@ -11,10 +11,10 @@
         <p class="orange-paragraph">helping working students succeed</p>
         <ul class="menu index-menu">
           <li>
-              <%= button_to("sign Up", access_signup_choice_path, :method => 'get', :class=>"button button-red-large button_spacing") %>
+              <%= button_to("Sign Up", access_signup_choice_path, :method => 'get', :class=>"button button-red-large button_spacing") %>
           </li>
           <li>
-              <%= link_to("login", "access/login") %>
+              <%= link_to("Login", "access/login") %>
           </li>
         </ul>
     </div>
@@ -51,11 +51,9 @@
 
     <div class="row column index-content">
       <h2>What?</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-         occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p class="larger-body-font">HireMe.com is a website dedicated to helping working students succeed in balancing both school, and having to work
+      at the same time. HireMe does this by using innovative job searching techniques, skills based user profiles, quality
+      information specifically targeted at working students, and by keeping it free for all.</p>
     </div>
   </div>
 </div>
@@ -67,11 +65,12 @@
 
     <div class="row column index-content white-block">
       <h2>Why?</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-         occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p>Being a working student for my entire student career I realized that it was very difficult to find good paying
+      jobs that worked around the schedule that I needed. I chanced upon an opportunity at a local Motorcycle Repair shop
+      which was able to give me decent pay with flexible hours thanks to the owners understanding my plight. Unfortunately, even
+      taking the maximum hours that they could give me I still needed to pick up a second job. I ended up with the classic
+      college student troupe of a delivery driver, but while trying to search for jobs I kept thinking that there had to be
+      a better way for a student to search and find work that jibed with a students ever changing schedule.</p>
     </div>
   </div>
 
@@ -95,8 +94,9 @@
     </div>
 
     <div class="row column" id="picture-index-row-3">
+      <div class="gradient-overlay gradient-overlay-index"></div>
       <div class="triangle-orange">
-        <%= image_tag("triangles.svg", :class => "triangle-none-image-gradient") %>
+        <%= image_tag("triangles.svg", :class => "triangle") %>
       </div>
     </div>
   </div>
@@ -106,12 +106,63 @@
     </div>
 
     <div class="row column index-content">
-      <h2>How?</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-         occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <h2>Better Searching</h2>
+      <p class="larger-body-font">By providing better tools specifically trageted at the needs of working students. This includes
+        better job searching to quickly filter out jobs that have no chance of working with their current, or upcoming,
+        school schedule.</p>
+    </div>
+  </div>
+</div>
+
+<div class="row index-content-row">
+  <div class="columns medium-6 small-12">
+    <div class="row column spacer spacer-white">
+    </div>
+
+    <div class="row column index-content white-block">
+      <h2>Better Profiles</h2>
+      <p class="larger-body-font">User Profiles that work to help showcase the students talent to potential employers instead of only their work
+        experience. This includes building a resume like profile that allows students to better describe their skills
+        and achievements, showcasing them to potential employers</p>
+    </div>
+  </div>
+
+  <div class="columns medium-6 small-12">
+    <div class="row column spacer">
+    </div>
+
+    <div class="row column picture-index-row" id="picture-index-row-4">
+      <div class="gradient-overlay gradient-overlay-index"></div>
+      <div class="triangle-white">
+        <%= image_tag("triangles-white.svg", :class => "triangle") %>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="row index-content-row">
+  <div class="columns medium-6 small-12 picture-index-row">
+    <div class="row column spacer spacer-white">
+    </div>
+
+    <div class="row column" id="picture-index-row-5">
+      <div class="gradient-overlay gradient-overlay-index"></div>
+      <div class="triangle-orange">
+        <%= image_tag("triangles.svg", :class => "triangle") %>
+      </div>
+    </div>
+  </div>
+
+  <div class="columns medium-6 small-12">
+    <div class="row column spacer spacer-orange">
+    </div>
+
+    <div class="row column index-content">
+      <h2>Better Access</h2>
+      <p class="larger-body-font">Keeping it free for all, including employers, HireMe is more open to smaller local shops that normally would
+        pass up on doing much more then putting a sign out front of their store. A larger broader community brings more flexible
+        job opportunities.</p>
     </div>
   </div>
 </div>

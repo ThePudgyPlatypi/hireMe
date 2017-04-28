@@ -2,6 +2,7 @@ class JobsController < ApplicationController
 
   def index
     @jobs = Job.all.order(created_at: :desc)
+  
   end
 
   def show
@@ -17,8 +18,8 @@ class JobsController < ApplicationController
     @employer = Employer.find(params[:employer_id])
     @job = Job.new(job_params)
     if @job.save
-      redirect_to(employer_path(@employer))
-      flash[:notice] = "Job listing #{@job.position} created successfully"
+      redirect_to(edit_employer_path(@employer))
+      flash[:notice] = "Job Created Successfully"
     else
       render 'new'
     end
@@ -50,7 +51,7 @@ class JobsController < ApplicationController
     @job = Job.find(params[:id])
     @job.user_applications.destroy_all
     @job.destroy
-    redirect_to(employer_path(@job.employer_id))
+    redirect_to(edit_employer_path(@job.employer_id))
     flash[:notice] = "Job listing #{@job.position} deleted successfully"
   end
 
@@ -62,7 +63,11 @@ class JobsController < ApplicationController
     :position,
     :salary,
     :description,
-    :hours
+    :hours,
+    :morning,
+    :afternoon,
+    :evening,
+    :night
   )
   end
 end

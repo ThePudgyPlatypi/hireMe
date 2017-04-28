@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @apps = @user.user_applications
+    @skills = @user.skills
     @education = @user.user_history_of_educations
     @employment = @user.user_history_of_employments
   end
@@ -32,6 +33,7 @@ class UsersController < ApplicationController
     @apps = @user.user_applications
     @education = @user.user_history_of_educations
     @employment = @user.user_history_of_employments
+    @skills = @user.skills
   end
 
   def update
@@ -39,7 +41,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.update_attributes(user_params)
         format.html { redirect_to(edit_user_path(@user), :notice => 'User profile updated successfully.') }
-        format.json { respond_with_bip(@employer) }
+        format.json { respond_with_bip(@user) }
       else
         format.html { render :action => "edit" }
         format.json { respond_with_bip(@user) }
@@ -88,7 +90,12 @@ class UsersController < ApplicationController
     :admin,
     :avatar,
     :document,
+    :morning,
+    :afternoon,
+    :evening,
+    :night,
     user_history_of_educations_attributes: [
+      :user_id,
       :school,
       :major,
       :gpa,
@@ -97,12 +104,23 @@ class UsersController < ApplicationController
       :currently_attending,
       :_destroy],
     user_history_of_employments_attributes: [
+      :user_id,
       :start_date,
       :end_date,
       :employer,
       :current_employer,
       :job_title,
       :contact_number,
-      :job_description])
+      :job_description,
+      :_destroy],
+    skills_attributes: [
+      :user_id,
+      :skill,
+      :advanced,
+      :experienced,
+      :beginner,
+      :description,
+      :_destroy
+      ])
   end
 end

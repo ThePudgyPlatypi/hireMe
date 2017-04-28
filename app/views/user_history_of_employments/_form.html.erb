@@ -1,0 +1,41 @@
+<%= emp.hidden_field(:user_id, :value => params[:user_id]) %>
+
+  <div class="row add-vertical-margin">
+    <div class="column large-3 small-12">
+      <label>Employer Name
+        <%= emp.text_field(:employer) %>
+      </label>
+    </div>
+    <div class="column large-3 small-12">
+      <label>Start Date
+        <%= emp.date_field(:start_date) %>
+      </label>
+    </div>
+    <div class="column large-3 small-12">
+      <label>End Date
+        <%= emp.date_field(:end_date) %>
+      </label>
+    </div>
+    <div class="column large-3 small-12">
+      <label>Currently Employeed?
+        <%= emp.check_box(:current_employer) %>
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column large-3 small-12">
+      <label>Job Title
+        <%= emp.text_field(:job_title) %>
+      </label>
+    </div>
+    <div class="column large-3 small-12">
+      <label>Contact Number
+        <%= emp.text_field(:contact_number) %>
+      </label>
+    </div>
+    <div class="column large-6 small-12">
+      <label>Job Description
+        <%= emp.text_area(:job_description) %>
+      </label>
+    </div>
+  </div>

@@ -28,3 +28,27 @@
     </label>
   </div>
 </div>
+
+<div class="row">
+  <div class="small-6 small-offset-3 column">
+    <label>Please select the time of day that best represents when you would need the employee to work:</label>
+    <table>
+      <tr>
+        <td><%= job.label 'Morning' %></td>
+        <td><%= job.radio_button :morning, true %></td>
+      </tr>
+      <tr>
+        <td><%= job.label 'Afternonn' %></td>
+        <td><%= job.radio_button :afternoon, true %></td>
+      </tr>
+      <tr>
+        <td><%= job.label 'Evening' %></td>
+        <td><%= job.radio_button :evening, true %></td>
+      </tr>
+      <tr>
+        <td><%= job.label 'Night' %></td>
+        <td><%= job.radio_button :night, true %></td>
+      </tr>
+    </table>
+  </div>
+</div>

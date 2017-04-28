@@ -1,0 +1,29 @@
+<%= edu.hidden_field(:user_id, :value => params[:user_id]) %>
+
+<div class="row add-vertical-margin">
+  <div class="column large-3 small-12">
+    <label>School name
+      <%= edu.text_field(:school) %>
+    </label>
+  </div>
+  <div class="column large-3 small-12">
+    <label>Major
+      <%= edu.text_field(:major) %>
+    </label>
+  </div>
+  <div class="column large-1 small-6">
+    <label>GPA
+      <%= edu.text_field(:gpa) %>
+    </label>
+  </div>
+  <div class="column large-2 small-6">
+    <label>Degree earned?
+      <%= edu.text_field(:degree) %>
+    </label>
+  </div>
+  <div class="column large-3 small-12">
+    <label>Graduation Date
+      <%= edu.date_field(:graduation_date) %>
+    </label>
+  </div>
+</div>

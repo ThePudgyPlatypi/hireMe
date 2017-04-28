@@ -43,8 +43,16 @@
           <p><%= edu.graduation_date %></p>
         </div>
       </div>
+      <span class="small-icons-right">
+        <%= link_to(edit_user_user_history_of_education_path(@user, edu.id)) do %>
+          <%= fa_icon 'pencil-square' %>
+        <% end %>
+        <%= link_to(delete_user_user_history_of_education_path(@user, edu.id)) do %>
+          <%= fa_icon 'trash' %>
+        <% end %>
+      </span>
     <% end %>
-    <%= button_to("Edit Education", edit_user_user_history_of_education_path(@education), :method => "get", :class => "button button_dropshadow") %>  
+    <%= button_to("Add New Education", new_user_user_history_of_education_path(@user), :method => "get", :class => "button button_dropshadow") %>
   </div>
 </div>
 
@@ -66,7 +74,7 @@
 
         <div class="row column">
           <ul class="menu">
-            <li><%= button_to("View Job", job_path(app.job_id), :method => 'get', :class => 'button button-white') %></li>
+            <li><%= button_to("View Job", job_path(app.job_id), :method => 'get', :class => 'button') %></li>
           </ul>
         </div>
       </div>

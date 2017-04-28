@@ -134,3 +134,35 @@
   margin-right: 30px;
   display: inline-block;
 }
+
+// skills styling for the little skills boxes
+.skill-box {
+    margin: 10px;
+    padding: 10px;
+}
+
+.advanced-skill {
+  background-color: #ff8300;
+}
+
+.experienced-skill {
+  background-color: rgba(255, 131, 0, 0.75);
+}
+
+.beginner-skill {
+  background-color: rgba(255, 131, 0, 0.5);
+}
+
+.skill-skill {
+  display: block;
+}
+
+.skill-description {
+  display: block;
+  padding-left: 10px;
+}
+
+.small-icons-right {
+  display: block;
+  text-align: right;
+}

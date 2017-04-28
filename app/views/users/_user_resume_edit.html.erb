@@ -2,7 +2,73 @@
 <div class="row">
   <h3 class="tab">Skills</h3>
   <%= fa_icon "star", class: "fa-5x user-info-icon" %>
-  <div class="small-12 column red-row user-row">
+  <div class="small-12 column red-row user-row white-text">
+    <div class="row">
+      <div class="columns large-4">
+        <strong>Advanced Skills</strong>
+        <% @skills.each do |skill| %>
+          <% if !skill.advanced.blank? %>
+            <div class='skill-box advanced-skill box-shadow'>
+              <span class='skill-skill'><%= skill.skill %></span>
+              <span class='skill-description'><%= !skill.description.blank? ? "#{skill.description}" : ""%></span>
+              <span class="small-icons-right">
+                <%= link_to(edit_user_skill_path(@user, skill.id)) do %>
+                  <%= fa_icon 'pencil-square' %>
+                <% end %>
+                <%= link_to(delete_user_skill_path(@user, skill.id)) do %>
+                  <%= fa_icon 'trash' %>
+                <% end %>
+              </span>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+
+      <div class="columns large-4">
+        <strong>Experienced Skills</strong>
+        <% @skills.each do |skill| %>
+          <% if !skill.experienced.blank? %>
+            <div class='skill-box experienced-skill box-shadow'>
+              <span class='skill-skill'><%= skill.skill %></span>
+              <span class='skill-description'><%= !skill.description.blank? ? "#{skill.description}" : ""%></span>
+              <span class="small-icons-right">
+                <%= link_to(edit_user_skill_path(@user, skill.id)) do %>
+                  <%= fa_icon 'pencil-square' %>
+                <% end %>
+                <%= link_to(delete_user_skill_path(@user, skill.id)) do %>
+                  <%= fa_icon 'trash' %>
+                <% end %>
+              </span>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+
+      <div class="columns large-4">
+        <strong>Beginner Skills</strong>
+        <% @skills.each do |skill| %>
+          <% if !skill.beginner.blank? %>
+            <div class='skill-box beginner-skill box-shadow'>
+              <span class='skill-skill'><%= skill.skill %></span>
+              <span class='skill-description'><%= !skill.description.blank? ? "#{skill.description}" : ""%></span>
+              <span class="small-icons-right">
+                <%= link_to(edit_user_skill_path(@user)) do %>
+                  <%= fa_icon 'pencil-square' %>
+                <% end %>
+                <%= link_to(delete_user_skill_path(@user)) do %>
+                  <%= fa_icon 'trash' %>
+                <% end %>
+              </span>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <ul class="menu">
+      <li>
+        <%= button_to("Add New Skills", new_user_skill_path(@user), :method => "get", :class => "button button_dropshadow") %>
+      </li>
+    </ul>
   </div>
 </div>
 
@@ -44,8 +110,16 @@
           <p><%= emp.contact_number %></p>
         </div>
       </div>
+      <span class="small-icons-right">
+        <%= link_to(edit_user_user_history_of_employment_path(@user, emp.id)) do %>
+          <%= fa_icon 'pencil-square' %>
+        <% end %>
+        <%= link_to(delete_user_user_history_of_employment_path(@user, emp.id)) do %>
+          <%= fa_icon 'trash' %>
+        <% end %>
+      </span>
     <% end %>
-    <%= button_to("Edit Employment", edit_user_user_history_of_employment_path(@employment), :method => "get", :class => "button button_dropshadow") %>
+    <%= button_to("Add Employment", new_user_user_history_of_employment_path(@user), :method => "get", :class => "button button_dropshadow") %>
   </div>
 </div>
 

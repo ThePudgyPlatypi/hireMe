@@ -1,4 +1,11 @@
-<div class="row v-center-align">
+<div class="row">
+  <div class="column small-12 red-row box-shadow text-center">
+    <%= fa_icon "handshake-o", :class => "fa-5x" %>
+    <h2 class="subheader text-center mainheader">Delete Job Offer</h2>
+  </div>
+</div>
+
+<div class="row">
   <h2 class="subheader text-center mainheader">Delete Job</h2>
   <%= form_for([@employer, @job], :method => 'delete') do |job| %>
     <p class="text-center">Are you sure you want to delete the <%= job.object.position %> job listing?</p>

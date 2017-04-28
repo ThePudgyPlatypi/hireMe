@@ -9,38 +9,40 @@
   </head>
 
   <body>
-    <div class="off-canvas-wrapper">
-      <div class="off-canvas position-left" id="offCanvas" data-transition="overlap" data-off-canvas>
-        <%= render :partial => "layouts/nav" %>
+      <div class="off-canvas-wrapper">
+        <div class="off-canvas position-left" id="offCanvas" data-transition="overlap" data-off-canvas>
+          <%= render :partial => "layouts/nav" %>
+        </div>
+
+        <div class="off-canvas-content" data-off-canvas-content>
+          <!-- Flash notice callout blocks -->
+          <% if !flash[:notice].blank? %>
+            <div class="success callout" data-closable>
+              <%= flash[:notice] %>
+              <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          <% end %>
+
+          <% if !flash[:warning].blank? %>
+            <div class="alert callout" data-closable>
+              <%= flash[:warning] %>
+              <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          <% end %>
+
+          <!-- <%= button_tag(fa_icon 'bars 3x', data: { toggle: "offCanvas" }, class: "menu-button") %> -->
+          <a class="menu-button" data-toggle="offCanvas">
+            <%= fa_icon "bars", class: "fa-3x" %>
+          </a>
+
+          <%= yield %>
+
+        </div>
       </div>
-      <div class="off-canvas-content" data-off-canvas-content>
-        <!-- Flash notice callout blocks -->
-        <% if !flash[:notice].blank? %>
-          <div class="success callout" data-closable>
-            <%= flash[:notice] %>
-            <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-        <% end %>
-
-        <% if !flash[:warning].blank? %>
-          <div class="alert callout" data-closable>
-            <%= flash[:warning] %>
-            <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-        <% end %>
-
-        <!-- <%= button_tag(fa_icon 'bars 3x', data: { toggle: "offCanvas" }, class: "menu-button") %> -->
-        <a class="menu-button" data-toggle="offCanvas">
-          <%= fa_icon "bars", class: "fa-3x" %>
-        </a>
-
-        <%= yield %>
-      <%= render :partial => "layouts/footer" %>
-      </div>
-    </div>
+    <!-- <%= render :partial => "layouts/footer" %> -->
   </body>
 </html>

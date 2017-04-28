@@ -1,0 +1,11 @@
+<div class="row orange-row">
+  <h2 class="subheader text-center mainheader">Edit Skill</h2>
+  <%= form_for [@user, @skill] do |skill| %>
+
+    <%= render(:partial => 'form', :locals => {:skill => skill}) %>
+
+    <div class="columns small-8 small-offset-2 end">
+    <%= skill.submit("Submit", :class => "button button_dropshadow") %>
+    </div>
+  <% end %>
+</div>

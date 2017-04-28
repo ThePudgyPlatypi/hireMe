@@ -1,7 +1,6 @@
 <div class="row orange-row">
   <h2 class="subheader text-center mainheader">Edit Job: <%= @job.position %></h2>
   <%= form_for [@employer, @job] do |job| %>
-
     <%= render(:partial => 'form', :locals => {:job => job}) %>
     <div class="columns small-8 small-offset-2 end">
       <%= job.submit("Edit Job", :class => "button") %>

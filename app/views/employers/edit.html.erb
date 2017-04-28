@@ -63,12 +63,13 @@
   </div>
 
   <div class="columns large-8 small-12 red-row">
-    <h3 class="subheader">Active Job Listings</h3>
+    <h3 class="subheader" >Active Job Listings</h3>
+    <%= button_to("Add Job", new_employer_job_path(@employer), :method => 'get', :class => "button add-vertical-margin inline-button") %>
     <% @jobs.each do |job| %>
       <div class="row column">
         <div class="row employer-job-row white-row">
           <span class="employer-job-application-icon">
-            <%= link_to("Applications:", job_user_applications_path(job), :class => "black-text") %> 
+            <%= link_to("Applications:", job_user_applications_path(job), :class => "black-text") %>
             <div class="small-red-circle">
               <p class="text-center">
                 <%= job.user_applications.length %>
@@ -81,6 +82,15 @@
 
             <div class="column small-12">
                 <p><%= job.description %></p>
+            </div>
+
+            <div class="column small-12">
+                <ul class="menu">
+                  <li><%= job.morning %></li>
+                  <li><%= job.afternoon %></li>
+                  <li><%= job.evening %></li>
+                  <li><%= job.night %></li>
+                </ul>
             </div>
             <ul class="menu">
               <li><%= button_to("Edit", edit_employer_job_path(@employer, job.id), :method => 'get', :class => 'button small button_spacing') %></li>

@@ -45,7 +45,26 @@
 }
 
 #picture-index-row-3 {
-  background-color: white;
+  background-image: url('./searching.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 380px;
+}
+
+#picture-index-row-4 {
+  background-image: url('./profile.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 380px;
+}
+
+#picture-index-row-5 {
+  background-image: url('./access.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 380px;
 }
 

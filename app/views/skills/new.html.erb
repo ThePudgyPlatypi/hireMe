@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="column small-12 red-row box-shadow text-center">
+    <%= fa_icon "star", :class => "fa-5x" %>
+    <h2 class="subheader text-center mainheader">Create New Skill</h2>
+  </div>
+</div>
+
+<div class="row orange-row">
+  <%= form_for [@user, @skill] do |skill| %>
+
+    <%= render(:partial => 'form', :locals => {:skill => skill}) %>
+
+    <div class="columns small-8 small-offset-2 end">
+    <%= skill.submit("Submit", :class => "button button_dropshadow button-red") %>
+    </div>
+  <% end %>
+</div>

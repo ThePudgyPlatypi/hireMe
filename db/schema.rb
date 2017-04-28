@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170426045334) do
+ActiveRecord::Schema.define(version: 20170428040221) do
 
   create_table "employers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "company_name"
@@ -62,6 +62,10 @@ ActiveRecord::Schema.define(version: 20170426045334) do
     t.string   "hours"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.boolean  "morning"
+    t.boolean  "afternoon"
+    t.boolean  "evening"
+    t.boolean  "night"
     t.index ["employer_id"], name: "index_jobs_on_employer_id", using: :btree
   end
 
@@ -150,6 +154,10 @@ ActiveRecord::Schema.define(version: 20170426045334) do
     t.string   "password_digest"
     t.string   "avatar"
     t.string   "document"
+    t.boolean  "morning"
+    t.boolean  "afternoon"
+    t.boolean  "evening"
+    t.boolean  "night"
   end
 
 end

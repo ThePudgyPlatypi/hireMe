@@ -16,7 +16,15 @@
 
     <% @jobs.each do |job| %>
       <div class="row column" style="text-align: center;">
-        <div class="row job orange-row box-shadow">
+        <% if job.morning? %>
+          <div class="row job orange-row box-shadow">
+        <% elsif job.afternoon? %>
+          <div class="row job red-row box-shadow">
+        <% elsif job.evening? %>
+          <div class="row job white-row box-shadow black-text">
+        <% else %>
+          <div class="row job white-row box-shadow black-text">
+        <% end %>
           <div class="column small-3 pic-col">
             <%= image_tag(job.employer.logo, :alt => "Employer Logo", :class => "employee-logo") %>
              <!-- render(:partial => 'view', :locals => {:job => job}) %> -->
@@ -41,7 +49,15 @@
 
             <div class="column small-3 match-col">
               <h3>match</h3>
-              <img src="http://placehold.it/350x200">
+              <% if job.morning? %>
+                <span class="match">100%</span>
+              <% elsif job.afternoon? %>
+                <span class="match">75%</span>
+              <% elsif job.evening? %>
+                <span class="match">25%</span>
+              <% else %>
+                <span class="match">0%</span>
+              <% end %>
             </div>
           </div>
 

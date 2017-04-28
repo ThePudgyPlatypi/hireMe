@@ -51,6 +51,30 @@
   </div>
 </fieldset>
 
+<div class="row">
+  <div class="small-6 small-offset-3 column">
+    <label>Please select the time of day that best represents when you would need the employee to work:</label>
+    <table>
+      <tr>
+        <td><%= user.label 'selection', 'Morning' %></td>
+        <td><%= user.radio_button :morning, true, :name => "schedule" %></td>
+      </tr>
+      <tr>
+        <td><%= user.label 'selection', 'Afternonn' %></td>
+        <td><%= user.radio_button :afternoon, true, :name => "schedule" %></td>
+      </tr>
+      <tr>
+        <td><%= user.label 'selection', 'Evening' %></td>
+        <td><%= user.radio_button :evening, true, :name => "schedule" %></td>
+      </tr>
+      <tr>
+        <td><%= user.label 'selection', 'Night' %></td>
+        <td><%= user.radio_button :night, true, :name => "schedule" %></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
 <fieldset class="step">
   <h3>Skills</h3>
   <%= user.nested_fields_for :skills, Skill.new do |skills| %>
@@ -67,10 +91,22 @@
       </div>
     </div>
     <div class="row">
-      <div class="column small-12">
-        <%= radio_button("skills", "advanced", "1") %>
-        <%= radio_button("skills", "experienced", "1") %>
-        <%= radio_button("skills", "beginner", "1") %>
+      <div class="column small-6 small-offset-3 end">
+        <label>Please select your proficiency with listed skill:</label>
+        <table>
+          <tr>
+            <td><%= skills.label 'skill_selection', 'Advanced' %></td>
+            <td><%= skills.radio_button :advanced, true %></td>
+          </tr>
+          <tr>
+            <td><%= skills.label 'skill_selection', 'Experienced' %></td>
+            <td><%= skills.radio_button :experienced, true %></td>
+          </tr>
+          <tr>
+            <td><%= skills.label 'skill_selection', 'Beginner' %></td>
+            <td><%= skills.radio_button :beginner, true %></td>
+          </tr>
+        </table>
       </div>
     </div>
     <%= fa_icon "minus-circle", class: "" %>

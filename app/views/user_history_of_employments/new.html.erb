@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="column small-12 red-row box-shadow text-center">
+    <%= fa_icon "handshake-o", :class => "fa-5x" %>
+    <h2 class="subheader text-center mainheader">Add Previous Employment</h2>
+  </div>
+</div>
+
+<div class="row orange-row">
+  <%= form_for [@user, @employment] do |emp| %>
+
+    <%= render(:partial => 'form', :locals => {:emp => emp}) %>
+
+    <div class="columns small-8 small-offset-2 end">
+    <%= emp.submit("Submit", :class => "button button_dropshadow button-red") %>
+    </div>
+  <% end %>
+</div>

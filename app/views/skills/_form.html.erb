@@ -1,0 +1,33 @@
+<%= skill.hidden_field(:user_id, :value => params[:user_id]) %>
+
+  <div class="row add-vertical-margin">
+    <div class="column large-6 large-offset-3 small-12">
+      <label>Name one of your skills
+        <%= skill.text_field(:skill) %>
+      </label>
+    </div>
+    <div class="column large-6 large-offset-3 small-12 end">
+      <label>Describe your skill in more detail
+        <%= skill.text_area(:description) %>
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column small-6 small-offset-3 end">
+      <label>Please select your proficiency with listed skill:</label>
+      <table>
+        <tr>
+          <td><%= skill.label 'skill_selection', 'Advanced' %></td>
+          <td><%= skill.radio_button :advanced, true %></td>
+        </tr>
+        <tr>
+          <td><%= skill.label 'skill_selection', 'Experienced' %></td>
+          <td><%= skill.radio_button :experienced, true %></td>
+        </tr>
+        <tr>
+          <td><%= skill.label 'skill_selection', 'Beginner' %></td>
+          <td><%= skill.radio_button :beginner, true %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
