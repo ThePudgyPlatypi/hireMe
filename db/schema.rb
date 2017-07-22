@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170428040221) do
+ActiveRecord::Schema.define(version: 20170428210336) do
 
   create_table "employers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.string   "company_name"
-    t.string   "about"
+    t.text     "about",           limit: 65535
     t.string   "industry"
     t.date     "founded"
     t.integer  "size"
@@ -46,8 +46,8 @@ ActiveRecord::Schema.define(version: 20170428040221) do
     t.string   "flickr"
     t.string   "reddit"
     t.string   "snapchat"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.string   "password_digest"
     t.string   "username"
     t.string   "logo"
@@ -108,6 +108,9 @@ ActiveRecord::Schema.define(version: 20170428040221) do
     t.string   "zip"
     t.string   "country"
     t.string   "last_name"
+    t.text     "cover",      limit: 65535
+    t.string   "email"
+    t.string   "phone"
     t.index ["job_id", "user_id"], name: "index_user_applications_on_job_id_and_user_id", using: :btree
   end
 

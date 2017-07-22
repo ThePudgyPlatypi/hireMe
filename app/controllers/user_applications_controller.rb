@@ -1,4 +1,4 @@
-class UserApplicationsController < ApplicationController
+  class UserApplicationsController < ApplicationController
   # Come back to this. I don't want to allow public access to job applications
   # Need to figure out how to have both the employer and user have access
   before_action :confirm_logged_in, :except => [:index, :show]
@@ -34,6 +34,6 @@ class UserApplicationsController < ApplicationController
   private
 
   def app_params
-    params.require(:user_application).permit(:name, :resume, :job_id, :user_id)
+    params.require(:user_application).permit(:name, :resume, :job_id, :user_id, :cover, :email, :phone, :address, :city)
   end
 end

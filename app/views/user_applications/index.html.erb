@@ -1,14 +1,26 @@
 <div class="row">
   <div class="column small-12 red-row box-shadow text-center">
-    <h1>Applications for <%= @job.position %></h1>
+    <%= fa_icon "file", :class => "fa-5x" %>
+    <h2 class="subheader text-center mainheader"> All applicants for <%= @job.position %> positing</h2>
   </div>
 </div>
+
 <div class="row">
   <% @apps.each do |app| %>
     <div class="column small-8 small-offset-2 end white-row box-shadow add-vertical-margin">
       <h2 class="black-text">Applicant Information</h2>
       <ul class="remove-list-styling">
         <li>Name: <%= app.name %></li>
+        <li>Contact Information
+          <ul class="remove-list-styling">
+            <li><%= app.phone %></li>
+            <li><%= app.email %></li>
+            <li><%= app.address %></li>
+            <li><%= app.city %></li>
+          </ul>
+        </li>
+        <li>Cover Letter:<br><%= app.cover %></li>
+
         <li><%= app.resume %></li>
         <%= link_to("Download Resume", app.document_url, :class => "black-text") %>
       </ul>

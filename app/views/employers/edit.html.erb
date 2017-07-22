@@ -83,15 +83,6 @@
             <div class="column small-12">
                 <p><%= job.description %></p>
             </div>
-
-            <div class="column small-12">
-                <ul class="menu">
-                  <li><%= job.morning %></li>
-                  <li><%= job.afternoon %></li>
-                  <li><%= job.evening %></li>
-                  <li><%= job.night %></li>
-                </ul>
-            </div>
             <ul class="menu">
               <li><%= button_to("Edit", edit_employer_job_path(@employer, job.id), :method => 'get', :class => 'button small button_spacing') %></li>
               <li><%= button_to("View", employer_job_path(@employer, job.id), :method => 'get', :class => 'button small button_spacing') %></li>

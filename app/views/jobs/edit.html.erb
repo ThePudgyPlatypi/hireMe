@@ -1,9 +1,15 @@
+<div class="row">
+  <div class="column small-12 red-row box-shadow text-center">
+    <%= fa_icon "handshake-o", :class => "fa-5x" %>
+    <h2 class="subheader text-center mainheader">Edit <%= @job.position %> Job Offer</h2>
+  </div>
+</div>
+
 <div class="row orange-row">
-  <h2 class="subheader text-center mainheader">Edit Job: <%= @job.position %></h2>
   <%= form_for [@employer, @job] do |job| %>
     <%= render(:partial => 'form', :locals => {:job => job}) %>
     <div class="columns small-8 small-offset-2 end">
-      <%= job.submit("Edit Job", :class => "button") %>
+      <%= job.submit("Edit Job", :class => "button button-red") %>
     </div>
   <% end %>
 </div>

@@ -1,8 +1,35 @@
-<div class="row">
+<div class="row white-row box-shadow">
   <div class="column small-8 small-offset-2">
-  <%= render(:partial => 'view', :locals => {:job => job}) %>
-    <ul class="menu">
-      <li><%= button_to("Apply", new_job_user_application_path(job), :method => 'get', :class=>"button button_spacing button_dropshadow") %></li>
-    </ul>
+    <div class="row">
+      <div class="column small-8">
+        <label class="bold">Job Position</label>
+          <p><%= job.position %></p>
+      </div>
+
+      <div class="column small-4">
+        <label class="bold">Company</label>
+          <p><%= job.employer.company_name %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column small-12">
+        <label class="bold">Description</label>
+          <p><%= job.description %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column small-8">
+        <label class="bold">Hours</label>
+          <p><%= job.hours %></p>
+      </div>
+
+      <div class="column small-4">
+        <label class="bold">Salary</label>
+          <p><%= job.salary %></p>
+      </div>
+    </div>
+    <div class="row column small-12">
+      <%= link_to("Apply", new_job_user_application_path(job), :method => "get", :class => "button") %>
+    </div>
   </div>
 </div>

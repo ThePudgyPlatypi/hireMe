@@ -77,47 +77,49 @@
   <%= fa_icon "briefcase", class: "fa-5x user-info-icon" %>
   <div class="small-12 column red-row user-row">
     <% @employment.each do |emp| %>
-      <div class="row white-text">
-        <div class="column small-4">
-          <strong>Company:</strong>
-          <p><%= emp.employer %></p>
+      <div class="row column orange-row box-shadow add-vertical-margin" >
+        <div class="row white-text side-padding">
+          <div class="column small-4">
+            <strong>Company:</strong>
+            <p><%= emp.employer %></p>
+          </div>
+          <div class="column small-4">
+            <strong>Start date:</strong>
+            <p><%= emp.start_date %></p>
+          </div>
+          <div class="column small-4">
+            <% if !emp.current_employer? %>
+              <strong>Currently employed:</strong>
+              <p>yes</p>
+            <% else %>
+              <strong>End Date:</strong>
+              <p><%= emp.end_date %></p>
+            <% end %>
+          </div>
         </div>
-        <div class="column small-4">
-          <strong>Start date:</strong>
-          <p><%= emp.start_date %></p>
+        <div class="row white-text side-padding">
+          <div class="column small-4">
+            <strong>Title:</strong>
+            <p><%= emp.job_title %></p>
+          </div>
+          <div class="column small-4">
+            <strong>Job Responsibilities and Duties</strong>
+            <p><%= emp.job_description %></p>
+          </div>
+          <div class="column small-4">
+            <strong>Contact Number</strong>
+            <p><%= emp.contact_number %></p>
+          </div>
         </div>
-        <div class="column small-4">
-          <% if !emp.current_employer? %>
-            <strong>Currently employed:</strong>
-            <p>yes</p>
-          <% else %>
-            <strong>End Date:</strong>
-            <p><%= emp.end_date %></p>
+        <span class="small-icons-right" style="padding-right: 20px;">
+          <%= link_to(edit_user_user_history_of_employment_path(@user, emp.id)) do %>
+            <%= fa_icon 'pencil-square' %>
           <% end %>
-        </div>
+          <%= link_to(delete_user_user_history_of_employment_path(@user, emp.id)) do %>
+            <%= fa_icon 'trash' %>
+          <% end %>
+        </span>
       </div>
-      <div class="row white-text">
-        <div class="column small-4">
-          <strong>Title:</strong>
-          <p><%= emp.job_title %></p>
-        </div>
-        <div class="column small-4">
-          <strong>Job Responsibilities and Duties</strong>
-          <p><%= emp.job_description %></p>
-        </div>
-        <div class="column small-4">
-          <strong>Contact Number</strong>
-          <p><%= emp.contact_number %></p>
-        </div>
-      </div>
-      <span class="small-icons-right">
-        <%= link_to(edit_user_user_history_of_employment_path(@user, emp.id)) do %>
-          <%= fa_icon 'pencil-square' %>
-        <% end %>
-        <%= link_to(delete_user_user_history_of_employment_path(@user, emp.id)) do %>
-          <%= fa_icon 'trash' %>
-        <% end %>
-      </span>
     <% end %>
     <%= button_to("Add Employment", new_user_user_history_of_employment_path(@user), :method => "get", :class => "button button_dropshadow") %>
   </div>

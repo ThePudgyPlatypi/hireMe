@@ -4,10 +4,16 @@
   <div class="small-8 small-offset-2 columns white-row box-shadow add-vertical-margin end">
     <label class="bold black-text">Name</label>
       <%= app.text_field(:name) %>
+    <label class="bold black-text">Email Address</label>
+      <%= app.text_field(:email) %>
+    <label class="bold black-text">Phone Number</label>
+      <%= app.text_field(:phone) %>
     <label class="bold black-text">Address</label>
       <%= app.text_field(:address) %>
     <label class="bold black-text">City</label>
       <%= app.text_field(:city) %>
+    <label class="bold black-text">Cover Letter</label>
+      <%= app.text_area(:cover) %>
     <label class="bold black-text">Resume</label>
       <%= app.file_field(:document) %>
 

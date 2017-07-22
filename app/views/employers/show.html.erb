@@ -1,11 +1,11 @@
 <div class="row">
   <div class="columns small-12 employer-image-header">
     <!-- This will be a header image for the employer -->
-    <%= image_tag("building.jpg", :class => "cover-picture", :alt => "") %>
+    <%= image_tag(@employer.header, :class => "cover-picture", :alt => "") %>
     <div class="gradient-overlay"></div>
   </div>
   <div class="picture-info-box">
-    <%= image_tag("logo.png", :alt => "logo", :class => "employee-logo") %>
+    <%= image_tag(@employer.logo, :alt => "logo", :class => "employee-logo") %>
     <h1 class="mainheader"><%= @employer.company_name %></h1>
     <ul>
       <li><%= link_to(@employer.contact_email) %></li>
@@ -18,6 +18,8 @@
 <div class="row employer-profile">
   <!-- <h2 class="subheader mainheader">Employer <%= @employer.company_name %> Parameters</h2> -->
   <div class="columns large-4 small-12 orange-row">
+        <%= button_to("Edit Profile", edit_employer_path(@employer), :method => "get", :class => "button button-margin button-red") %>
+
       <h3>About Us</h3>
       <%= @employer.about %>
       <ul class="employer-general-information">

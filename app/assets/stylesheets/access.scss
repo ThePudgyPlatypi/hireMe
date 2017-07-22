@@ -22,6 +22,11 @@
 }
 
 .index-content {
+
+}
+
+.index-content h2 {
+  margin-left: 10px;
 }
 
 .index-content p {
@@ -146,10 +151,12 @@
 
 .triangle-orange {
   text-align: right;
+  margin-right: -1px;
 }
 
 .triangle-white {
   text-align: left;
+  margin-left: -1px;
 }
 
 // --------------------------------------------------

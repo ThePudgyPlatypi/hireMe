@@ -21,9 +21,9 @@
         <% elsif job.afternoon? %>
           <div class="row job red-row box-shadow">
         <% elsif job.evening? %>
-          <div class="row job white-row box-shadow black-text">
+          <div class="row job white-row box-shadow">
         <% else %>
-          <div class="row job white-row box-shadow black-text">
+          <div class="row job white-row box-shadow">
         <% end %>
           <div class="column small-3 pic-col">
             <%= image_tag(job.employer.logo, :alt => "Employer Logo", :class => "employee-logo") %>
@@ -31,14 +31,14 @@
            </div>
 
             <div class="column small-3 title-col">
-              <h3>Job</h3>
+              <%= job.evening? || job.night? ? "<h3 class='black-text'>".html_safe : "<h3>".html_safe %>Job</h3>
               <p>
-                <%= link_to(job.employer.company_name, employer_path(job.employer_id)) %>
+                <%= link_to(job.employer.company_name, employer_path(job.employer_id), :class => job.evening? || job.night? ? "black-text" : "") %>
               </p>
             </div>
 
             <div class="column small-3 aag-col">
-              <h3>at a glance:</h3>
+              <%= job.evening? || job.night? ? "<h3 class='black-text'>".html_safe : "<h3>".html_safe %>At a Glance:</h3>
               <p>
                 <%= job.position %>
               </p>
@@ -48,7 +48,7 @@
             </div>
 
             <div class="column small-3 match-col">
-              <h3>match</h3>
+              <%= job.evening? || job.night? ? "<h3 class='black-text'>".html_safe : "<h3>".html_safe %>Match</h3>
               <% if job.morning? %>
                 <span class="match">100%</span>
               <% elsif job.afternoon? %>
